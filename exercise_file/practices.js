@@ -1,5 +1,5 @@
 /* ---------------------------------------- */
-console.log(7. 숫자형 연습)
+console.log("7. 숫자형 연습")
 
 var width = 10;
 var height = 20;
@@ -17,7 +17,7 @@ console.log("둘레의 길이: " + perimeter);
 console.log("넓이: " + area);
 
 /* ---------------------------------------- */
-console.log(8. 자료형 활용하기1)
+console.log("8. 자료형 활용하기1")
 
 // 숫자형과 문자열 재료
 var material1 = 3;
