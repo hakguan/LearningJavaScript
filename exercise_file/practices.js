@@ -1,5 +1,5 @@
 /* ---------------------------------------- */
-console.log("7. 숫자형 연습")
+console.log("1-7. 숫자형 연습")
 
 var width = 10;
 var height = 20;
@@ -17,7 +17,7 @@ console.log("둘레의 길이: " + perimeter);
 console.log("넓이: " + area);
 
 /* ---------------------------------------- */
-console.log("8. 자료형 활용하기1")
+console.log("1-8. 자료형 활용하기1")
 
 // 숫자형과 문자열 재료
 var material1 = 3;
@@ -44,7 +44,7 @@ console.log(typeof result2);
 
 
 /* ---------------------------------------- */
-console.log("13. 자료형 활용하기2")
+console.log("1-13. 자료형 활용하기2")
 
 // 숫자형과 문자열 재료
 var material1 = '3';
@@ -68,4 +68,52 @@ console.log(result2);
 console.log(typeof result2);
 
 /* ---------------------------------------- */
-console.log("13. 자료형 활용하기2")
+console.log("2-2. 함수 부려먹기1")
+
+// 여기에 logParticipant 함수를 써주세요.
+// 코드를 작성해주세요.
+function logParticipant(name) {
+    console.log(name + "(이)가 대화에 참여했습니다.")
+}
+
+// 테스트 코드
+logParticipant('동욱');
+logParticipant('신의');
+logParticipant('윤수');
+logParticipant('지은');
+logParticipant('동준');
+logParticipant('영훈');
+
+/* ---------------------------------------- */
+console.log("2-4. 함수 부려먹기2")
+
+// 여기에 expressMultiplication 함수를 써주세요.
+// 코드를 작성해주세요.
+function expressMultiplication(x, y) {
+    console.log(String(x) + " * " + String(y) + " = " + String(x * y))
+}
+
+// 테스트 코드
+expressMultiplication(3, 4);
+expressMultiplication(3, 2);
+expressMultiplication(7, 5);
+expressMultiplication(8, 9);
+expressMultiplication(5, 5);
+expressMultiplication(9, 9);
+
+/* ---------------------------------------- */
+console.log("2-7. 함수 부려먹기3")
+
+// calculateRectangleArea라는 이름의 함수를 만드세요.
+// 이 함수는 가로와 세로를 입력받아서 넓이를 return 해주어야 합니다.
+function calculateRectangleArea(width, height) {
+    area = width * height;
+    return area;
+}
+
+// 테스트 코드
+var area1 = calculateRectangleArea(3, 4); // 가로 3, 세로 4인 직사각형의 넓이 계산
+var area2 = calculateRectangleArea(5, 8); // 가로 5, 세로 8인 직사각형의 넓이 계산
+var area3 = calculateRectangleArea(7, 2); // 가로 7, 세로 2인 직사각형의 넓이 계산
+
+console.log('Area1: ' + area1 + ', Area2: ' + area2 + ', Area3: ' + area3);

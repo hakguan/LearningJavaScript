@@ -278,5 +278,49 @@ console.log(person.name); // Dongwook
 
 ## 2. 코드의 흐름
 ### 함수
+함수를 사용할 경우, 유지보수가 쉽고, 더 효율적으로 코드가 작동할 수 있음
+* 함수의 정의
+  ```javascript
+  // function 함수명(parameter) {함수내용}
+
+  function logTask(task) {
+    console.log(task + ": 완료");
+    console.log("-");
+  }
+
+  logTask("보고서 작성");
+  ```
+
+* return
+  ```javascript
+  function inchToCentimeter(inch) {
+    var centimeter = inch * 2.54;
+    return centimeter;
+  }
+  // 위 함수는 inch를 cm로 계산하여 centimeter값을 return해주는 함수임
+  ```
+
+* JS 내장 함수
+  + 형 변환 함수 : `String()`, `Number()` 등
+  + parselnt 함수 : 숫자와 문자가 섞여있는 경우 숫자만 꺼내서 형변환 시켜줌
+  ```javascript
+  parseInt('100건'); // 100
+  // 숫자가 앞에 있는 경우만 적용 가능
+  parseInt('범죄건수100'); // NaN
+  ```
+  + 그 외 내장 함수 
+
+  |       함수       | 내용                                     |
+  | :------------: | :------------------------------------- |
+  |   `String()`   | 숫자를 문자열로 변환해주는 함수                      |
+  |   `Number()`   | 문자열을 숫자로 변환해주는 함수                      |
+  |  `parseInt()`  | 문자열 안에서 정수를 뽑아주는 함수                    |
+  | `parseFloat()` | 문자열 안에서 숫자(소수 포함)를 뽑아주는 함수             |
+  |   `alert()`    | 사용자에게 메시지를 띄워주는 함수                     |
+  |   `prompt()`   | 사용자에게 메시지를 띄우고, 문자열을 입력받는 함수           |
+  |  `confirm()`   | 사용자에게 메시지를 띄우고, 확인과 취소 중 하나를 누르게 하는 함수 |
+
 ### 조건문
+* if문
+
 ### 반복문
