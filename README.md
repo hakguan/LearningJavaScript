@@ -387,7 +387,7 @@ console.log(person.name); // Dongwook
     }
     ```
 
-    - **switch문**을 사용하는 것이 유리한 경우: 
+    - **switch문**을 사용하는 것이 유리한 경우: case별로 구분하는 것이 더 편리한 경우 
     ```Javascript
     /* 
     A 코스: 짜장면 짬뽕 탕수육 양장피 팔보채
