@@ -30,7 +30,7 @@ Leaning JavaScript with internet!
   ```javascript
   // 1. 변수 바로 정의 
       var score = 0;
-  // 2. 변수만 정의 하고 추후게 값 지정
+  // 2. 변수만 정의 하고 추후에 값 지정
       var score;
       score = 0;
   // 3. 여러 변수를 한번에 정의
@@ -322,5 +322,92 @@ console.log(person.name); // Dongwook
 
 ### 조건문
 * if문
+  ```Javascript
+  var inputNumber = window.prompt("한 자리 숫자를 적어주세요.");
+  // window.prompt를 통해 사용자가 값을 입력할 수 있는 창이 뜨고, 
+  // 입력된 값의 자료형은 string임
+  
+  if (inputNumber === '7') {
+  // if의 ()안의 내용이 true일 경우 
+    alert('Lucky!');
+  } else {
+  // if의 ()안의 내용이 False일 경우
+    alert('Unlucky!');
+  }
+  ```
+  + else if를 활용할 경우 더 많은 조건을 지정해줄 수 있음
+  ```Javascript
+  if (inputNumber === '7') {
+    alert('Lucky!');
+  } else if (inputNumber === '0') {
+    alert('Zero');
+  } else if (inputNumber === '1') {
+    alert('One');
+  } else {
+    alert('Unlucky!');
+  }
+  ```
+  + 보다 복잡한 조건문
+  ```Javascript
+  var num = 12;
+  if (num % 2 === 0 && num % 3 === 0) {
+    console.log(num + '는 6의 배수입니다.');
+  } else {
+    console.log(num + '는 6의 배수가 아닙니다.');
+  }
+  // console에 '12는 6의 배수입니다.'가 출력됨
+  ```
+* switch문
+  + if문과 비슷하나 원하는 동작 후에 break를 사용해줘야 함
+  ```Javascript
+  switch (inputNumber) {
+    case '0':
+      alert('Zero!');
+      break;
+    case '1':
+      alert('One!');
+      break;
+    case '7':
+      alert('Lucky!');
+      break;
+    default:
+      alert('Unlucky!');
+      break;
+    // defalut에는 위의 조건들을 모두 만족시키지 못할 경우 진입함
+    // break를 사용하지 않을 경우 조건에 맞는 경우부터 마지막까지 모둔 alert가 출력됨
+    // 1을 입력할 경우 'One!'부터 'Unlucky!'까지 모두 출력되며, 중간에 break를 사용할 경우 사용한 단계까지만 출력됨
+  }
+  ```
+  + 경우에 따라 switch문과 if문 각각이 유리한 경우가 존재함
+    - **if문**을 사용하는 것이 유리한 경우: 대소범위, 조건이 복잡한 경우 등
+    ```Javascript
+    var score = 85;
+    if (score > 70) {
+      alert("잘 하셨습니다!")
+    }
+    ```
+
+    - **switch문**을 사용하는 것이 유리한 경우: 
+    ```Javascript
+    /* 
+    A 코스: 짜장면 짬뽕 탕수육 양장피 팔보채
+    B 코스: 유산슬 짜장면 짬뽕 탕수육 양장피 팔보채
+    C 코스: 게살스프 칠리새우 유산슬 짜장면 짬봉 탕수육 양장피 팔보채
+    */
+    var courseName = window.prompt("코스명을 적어주세요(A, B, C 택1)");
+
+    switch (courseName) {
+      case 'C':
+        console.log('게살스프 칠리새우');
+      case 'B':
+        console.log('유산슬');
+      case 'A':
+        console.log('짜장면 짬봉 탕수육 양장피 팔보채');
+        break;
+      default:
+        console.log('주문이 잘못되었습니다.');
+        break;
+    }
+    ```
 
 ### 반복문
