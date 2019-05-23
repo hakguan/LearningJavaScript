@@ -155,3 +155,52 @@ var result3 = whatShouldICallYou(25, 'female', 22, 'male');
 console.log(result1);
 console.log(result2);
 console.log(result3);
+
+/* ---------------------------------------- */
+console.log("3-2. 삼각형 그리기")
+
+function printTriangle(height) {
+    // 이 함수 안에서 console.log를 직접 사용하여
+    // 직접 출력까지 완료해야 합니다.
+    // 이 함수는 return 값이 없습니다.
+    var line = "";
+    for (var i = 0; i < height; i += 1) {
+        line += '*';
+        console.log(line);
+    }
+}
+
+// 테스트 코드
+console.log('높이: 5');
+printTriangle(5);
+
+console.log('높이: 3');
+printTriangle(3);
+
+console.log('높이: 1');
+printTriangle(1);
+
+/* ---------------------------------------- */
+console.log("3-4. 2등 찾기")
+
+function getSecondBiggestNumber(arr) {
+    // 코드를 작성하세요.
+    var biggestNum = arr[0];
+    var secondBiggestNum = arr[0];
+
+    for (var i = 0; i < arr.length; i++) {
+        if (biggestNum < arr[i]) {
+            secondBiggestNum = biggestNum;
+            biggestNum = arr[i];
+        } else if (secondBiggestNum < arr[i]) {
+            secondBiggestNum = arr[i];
+        }
+    }
+
+    return secondBiggestNum;
+}
+
+// 테스트 코드
+console.log(getSecondBiggestNumber([4, 7, 2, 1, 9, 3, 6, 5]));
+console.log(getSecondBiggestNumber([80, 2, 44, 21, 92, 3, 51]));
+console.log(getSecondBiggestNumber([4, 7, 6, 5]));

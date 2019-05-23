@@ -118,7 +118,7 @@ typeof b; //"boolean"
   var text1 = '안녕하세요';
   var text2 = "안녕하세요";
   // ' 또는 "로 문자열 정의
-  var text3 = 'it's cool'; //오류발생
+  var text3 = 'it's cool'; //오류 발생
   var text3 = "it's cool";
   ```
 
@@ -276,7 +276,7 @@ console.log(person["name"]); // Dongwook
 console.log(person.name); // Dongwook 
 ```
 
-## 2. 코드의 흐름
+## 2. 코드의 흐름 - 함수
 ### 함수
 함수를 사용할 경우, 유지보수가 쉽고, 더 효율적으로 코드가 작동할 수 있음
 * 함수의 정의
@@ -410,4 +410,17 @@ console.log(person.name); // Dongwook
     }
     ```
 
+## 3. 코드의 흐름 - 반복문
 ### 반복문
+* for 반복문
+  ```Javascript
+  var brands = ['Apple', 'Coca-Cola', 'Starbucks', 'Amazon', 'Disney', 'BMW'];
+  /*
+  for (반복문에 사용할 변수 선언; 반복 조건; 반복문이 끝나고 실행될 코드) {
+    반복시키고 싶은 코드;
+  }
+  */
+  for (var i = 0; i < 6; i = i + 1) {
+    console.log(brands[i]);
+  }
+  ```
