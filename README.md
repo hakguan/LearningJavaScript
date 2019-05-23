@@ -424,3 +424,90 @@ console.log(person.name); // Dongwook
     console.log(brands[i]);
   }
   ```
+
+  + for of 반복문
+    ```Javascript
+    var brands = ['NIKE', 'ADIDAS', 'REEBOK'];
+    
+    // 배열의 모든 값을 출력하기 위한 반복문
+    for (var i = 0; i < brands.length; i ++) {
+      console.log(brands[i]);
+    }
+
+    // for of 반복문은 배열의 0번 index를 첫 번째 값으로 가짐
+    for (value of brands) {
+      console.log(value);
+    }
+    ```
+
+    - 일반 for 반복문과 for of 반복문이 갖는 장점
+      - 조건 작성 부분 간편
+      - 불필요한 변수 지정 불필요
+
+  + for in 반복문
+    - for of 반복문은 ES6(2015년)에 생긴 기능으로 그 전에는 for in 반복문을 사용하였음
+    - 만약 테스트 했을 때 for of 반복문이 작동하지 않는다면 해당 브라우저가 ES6을 지원하는지 여부를 알아봐야 함
+    - for in 반복문은 for of 반복문과 달리 value가 아닌 index로 접근함
+    ```Javascript
+    var arr = ['apple', 'banana', 'coconut'];
+
+    //for of 반복문
+    for (var v of arr) {
+      console.log(v); // apple 부터 값 출력
+    }
+
+    //for in 반복문
+    for (var k in arr) {
+      console.log(k); // 0, 1, 2 순서로 값 출력
+    }
+    // 따라서 value를 출력하고 싶을 경우 console.log(arr[k])를 사용해야 함
+    ```
+
+* while 반복문
+  ```Javascript
+  var brands = ['Apple', 'Coca-Cola', 'Starbucks', 'Amazon', 'Disney', 'BMW'];
+  // 1. 변수지정
+  var i = 0;
+  // 2. while문 작성
+  while (i < 6) { //조건이 true일 경우 반복
+    console.log(brands[i]);
+    i ++;
+  }
+  // while문의 조건이 false가 될 경우 반복 종료
+  ```
+
+  + while 반복문에서 break와 continue
+    - break문 : while문의 조건부분과 상관 없이 반복문에서 나오게 하고 싶은 경우
+    ```Javascript
+    var i = 100;
+    
+    while (true) {
+      // i가 23의 배수일 경우 반복문 종료
+      if (i % 23 == 0) {
+        break;
+      }
+      i = i + 1;
+    }
+
+    console.log(i);
+    ```
+    - continue문 : 현재 진행되고 있는 수행부분을 중단시키고 다시 조건부분을 확인하도록 하고 싶은 경우
+    ```Javascript
+    var i = 0;
+
+    while (i < 15) {
+      i ++;
+
+      // i가 홀수일 경우 console.log(i)로 넘어가지 않고 다시 조건부분으로 넘어감
+      if (i % 2 == 1) {
+        continue;
+      }
+
+      console.log(i);
+    }
+    ```
+
+* for문 vs while문
+  + for문과 while문의 기능적 차이는 없으나, 경우에 따라 더 적합하고 보기 좋은가에 대한 판단을 통해 어떤 문법을 사용할지 결정함
+  + 일반적으로 반복 횟수가 예측 가능할 경우 for문을 사용하는 것이 더 효과적이고, 
+  + 반대로 반복 횟수를 예측할 수 없을 경우 while문을 쓰는 것이 효과적인 경우가 많음
