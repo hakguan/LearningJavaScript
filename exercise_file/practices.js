@@ -1,5 +1,7 @@
 /* ---------------------------------------- */
+console.log("---------------")
 console.log("1-7. 숫자형 연습")
+console.log("---------------")
 
 var width = 10;
 var height = 20;
@@ -17,7 +19,9 @@ console.log("둘레의 길이: " + perimeter);
 console.log("넓이: " + area);
 
 /* ---------------------------------------- */
+console.log("--------------------")
 console.log("1-8. 자료형 활용하기1")
+console.log("--------------------")
 
 // 숫자형과 문자열 재료
 var material1 = 3;
@@ -44,7 +48,9 @@ console.log(typeof result2);
 
 
 /* ---------------------------------------- */
+console.log("---------------------")
 console.log("1-13. 자료형 활용하기2")
+console.log("---------------------")
 
 // 숫자형과 문자열 재료
 var material1 = '3';
@@ -68,7 +74,9 @@ console.log(result2);
 console.log(typeof result2);
 
 /* ---------------------------------------- */
+console.log("------------------")
 console.log("2-2. 함수 부려먹기1")
+console.log("------------------")
 
 // 여기에 logParticipant 함수를 써주세요.
 // 코드를 작성해주세요.
@@ -85,7 +93,9 @@ logParticipant('동준');
 logParticipant('영훈');
 
 /* ---------------------------------------- */
+console.log("------------------")
 console.log("2-4. 함수 부려먹기2")
+console.log("------------------")
 
 // 여기에 expressMultiplication 함수를 써주세요.
 // 코드를 작성해주세요.
@@ -102,7 +112,9 @@ expressMultiplication(5, 5);
 expressMultiplication(9, 9);
 
 /* ---------------------------------------- */
+console.log("------------------")
 console.log("2-7. 함수 부려먹기3")
+console.log("------------------")
 
 // calculateRectangleArea라는 이름의 함수를 만드세요.
 // 이 함수는 가로와 세로를 입력받아서 넓이를 return 해주어야 합니다.
@@ -119,7 +131,9 @@ var area3 = calculateRectangleArea(7, 2); // 가로 7, 세로 2인 직사각형�
 console.log('Area1: ' + area1 + ', Area2: ' + area2 + ', Area3: ' + area3);
 
 /* ---------------------------------------- */
+console.log("---------------")
 console.log("2-11. 서열 정리")
+console.log("---------------")
 
 function whatShouldICallYou(myAge, myGender, yourAge, yourGender) {
     // 나의 나이, 나의 성별, 상대방의 나이, 상대방의 성별
@@ -157,7 +171,9 @@ console.log(result2);
 console.log(result3);
 
 /* ---------------------------------------- */
+console.log("-----------------")
 console.log("3-2. 삼각형 그리기")
+console.log("-----------------")
 
 function printTriangle(height) {
     // 이 함수 안에서 console.log를 직접 사용하여
@@ -181,7 +197,9 @@ console.log('높이: 1');
 printTriangle(1);
 
 /* ---------------------------------------- */
+console.log("-------------")
 console.log("3-4. 2등 찾기")
+console.log("-------------")
 
 function getSecondBiggestNumber(arr) {
     // 코드를 작성하세요.
@@ -204,3 +222,26 @@ function getSecondBiggestNumber(arr) {
 console.log(getSecondBiggestNumber([4, 7, 2, 1, 9, 3, 6, 5]));
 console.log(getSecondBiggestNumber([80, 2, 44, 21, 92, 3, 51]));
 console.log(getSecondBiggestNumber([4, 7, 6, 5]));
+
+/* ---------------------------------------- */
+console.log("--------------")
+console.log("3-11. 팩토리얼")
+console.log("--------------")
+
+function factorial(num) {
+
+    // 0!의 값은 1이므로 결과값의 초기값을 1로 설정
+    var factorialValue = 1;
+
+    // 코드를 작성하세요.
+    for (var i = 1; i <= num; i++) {
+        factorialValue *= i;
+    }
+
+    return factorialValue;
+}
+
+console.log(factorial(10));
+console.log(factorial(5));
+console.log(factorial(3));
+console.log(factorial(0));
