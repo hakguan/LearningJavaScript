@@ -245,3 +245,82 @@ console.log(factorial(10));
 console.log(factorial(5));
 console.log(factorial(3));
 console.log(factorial(0));
+
+/* ---------------------------------------- */
+console.log("--------------")
+console.log("3-13. 배열 만들기1")
+console.log("--------------")
+
+function range(start, end, step) {
+    var arr = [];
+
+    // 코드를 작성해주세요.
+    if (step > 0) {
+        for (var i = start; i < end; i += step) {
+            arr.push(i);
+        }
+    } else {
+        for (var i = start; i > end; i += step) {
+            arr.push(i);
+        }
+    }
+
+    return arr;
+}
+
+/*
+push method를 사용하지 않을 경우 
+arr의 index를 지정할 수 있는 변수(idx)를 정의하고 
+    var idx = 0;
+for문에 arr의 index에 따라 값을 추가해주면 됨
+    arr[idx] = i;
+    idx++
+*/
+
+// 테스트 코드
+console.log(range(1, 10, 1));
+console.log(range(-1, 10, 3));
+console.log(range(10, -10, -4));
+
+
+
+/* ---------------------------------------- */
+console.log("--------------")
+console.log("3-15. 배열 만들기2")
+console.log("--------------")
+
+var arr1 = [
+    [2, 1],
+    [4, 3]
+];
+var arr2 = [
+    [3, 2, 1],
+    [5, 4],
+    [6]
+];
+var arr3 = [
+    [3],
+    [4, 5],
+    [6],
+    [7],
+    [8, 9, 10]
+];
+
+function restoreArray(arr) {
+    var returnArr = [];
+    var idx = 0;
+
+    // 코드를 작성해주세요.
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = arr[i].length; j > 0; j--) {
+            returnArr[idx] = arr[i][j - 1];
+            idx++;
+        }
+    }
+
+    return returnArr;
+}
+
+console.log(restoreArray(arr1));
+console.log(restoreArray(arr2));
+console.log(restoreArray(arr3));
