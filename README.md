@@ -549,19 +549,32 @@ console.log(person.name); // Dongwook
 ```
 
 ### jQuery
-* [jQuery CDN](https://code.jquery.com/)에서 minified 항목의 내용을 html 문서 `<script>`태그 위에 붙여넣기  
-  
-  ```html
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-  
-  <script>
-    // 자바스크립트
-  </script>
-  ```
+#### 설치방법
 
-* [travel_site](https://github.com/hakguan/LearningJavaScript/tree/master/practice/travel_site) javascript 코드 단순화
+1. **링크를 html 파일에 삽입하기**  
+  [jQuery CDN](https://code.jquery.com/)에서 minified 항목의 내용을 html 문서 `<script>`태그 위에 붙여넣기  
+
+    ```html
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    
+    <script>
+      // 자바스크립트 코드
+    </script>
+    ```  
+  
+2. **jQeury 코드 파일을 프로젝트 폴더에 설치하기**  
+  [jQuery 홈페이지](https://jquery.com/)에서 jQuery 코드를 다운받고 프로젝트 폴더 내에 추가한 후 `<script>`태그에 `jquery.js`의 경로를 추가  
+      
+    ```html
+    <script src="jsquery.js의 경로"></script>
+    <script>
+      // 자바스크립트 코드
+    </script>
+    ```
+#### 기본문법
+[travel_site](https://github.com/hakguan/LearningJavaScript/tree/master/practice/travel_site) javascript 코드 단순화
   ```html
   <script>
     function clickHome() {
