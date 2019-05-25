@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Travel Website</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <img id="logo" src="images/logo.png" width="165" height="58">
+
+    <div id="menu">
+        <a id="home" onclick="clickHome();">Home</a>
+        <a id="seoul" onclick="clickSeoul();">Seoul</a>
+        <a id="tokyo" onclick="clickTokyo();">Tokyo</a>
+        <a id="paris" onclick="clickParis();">Paris</a>
+    </div>
+
+    <img id="photo" src="images/home.png" width="90%">
+
+    <!-- jQuery를 사용할 수 있도록 하는 부분 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- jQuery를 사용해서 수정 -->
+    <script>
+        // 사진 및 폰트 굵기를 바꿔주는 함수
+        function clickHome() {
+            $('#photo').attr('src', 'images/home.png')
+            $('#home').css('font-weight', 'bold');
+            $('#seoul').css('font-weight', 'normal');
+            $('#tokyo').css('font-weight', 'normal');
+            $('#paris').css('font-weight', 'normal');
+        }
+
+        function clickSeoul() {
+            $('#photo').attr('src', 'images/seoul.png')
+            $('#home').css('font-weight', 'normal');
+            $('#seoul').css('font-weight', 'bold');
+            $('#tokyo').css('font-weight', 'normal');
+            $('#paris').css('font-weight', 'normal');
+        }
+
+        function clickTokyo() {
+            $('#photo').attr('src', 'images/tokyo.png')
+            $('#home').css('font-weight', 'normal');
+            $('#seoul').css('font-weight', 'normal');
+            $('#tokyo').css('font-weight', 'bold');
+            $('#paris').css('font-weight', 'normal');
+        }
+
+        function clickParis() {
+            $('#photo').attr('src', 'images/paris.png')
+            $('#home').css('font-weight', 'normal');
+            $('#seoul').css('font-weight', 'normal');
+            $('#tokyo').css('font-weight', 'normal');
+            $('#paris').css('font-weight', 'bold');
+        }
+    </script>
+</body>
+
+</html>

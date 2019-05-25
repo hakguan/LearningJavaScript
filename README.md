@@ -519,3 +519,56 @@ console.log(person.name); // Dongwook
   + for문과 while문의 기능적 차이는 없으나, 경우에 따라 더 적합하고 보기 좋은가에 대한 판단을 통해 어떤 문법을 사용할지 결정함
   + 일반적으로 반복 횟수가 예측 가능할 경우 for문을 사용하는 것이 더 효과적이고, 
   + 반대로 반복 횟수를 예측할 수 없을 경우 while문을 쓰는 것이 효과적인 경우가 많음
+
+## 4. HTML, CSS와의 콜라보레이션
+[learning_webdev/practice/travel_site/](https://github.com/hakguan/learning_webdev/tree/master/practice/travel_site)에서는 각 국가의 페이지로 이동할 때 국가별로 html 파일을 만들어서 지정했지만, [Javascript를 사용](https://github.com/hakguan/LearningJavaScript/tree/master/practice/travel_site)하면 하나의 html 파일에서 클릭했을 때의 명령을 각각 지정해줄 수 있고 html의 body 부분을 최대한 보기 좋게 하기 위해 함수를 정의해 활용하는 것이 좋음
+
+```Html
+<body>
+  <div id="menu">
+    <a id="home" onclick="clickHome();">Home</a>
+    <a id="seoul" onclick="clickSeoul();">Seoul</a>
+    <a id="tokyo" onclick="clickTokyo();">Tokyo</a>
+    <a id="paris" onclick="clickParis();">Paris</a>
+  </div>
+</body>
+
+<img id="photo" src="images/home.png" width="90%">
+
+<script>
+  // 이미지, 폰트를 바꿔주는 함수
+  function clickHome() {
+    document.getElementById('photo').src = 'images/home.png';
+    document.getElementById('home').style.fontWeight = 'bold';
+    document.getElementById('seoul').style.fontWeight = 'normal';
+    document.getElementById('tokyo').style.fontWeight = 'normal';
+    document.getElementById('paris').style.fontWeight = 'normal';  
+  }
+  // 생략 
+</script>
+```
+
+### jQuery
+* [jQuery CDN](https://code.jquery.com/)에서 minified 항목의 내용을 html 문서 `<script>`태그 위에 붙여넣기  
+  
+  ```html
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  
+  <script>
+    // 자바스크립트
+  </script>
+  ```
+
+* [travel_site](https://github.com/hakguan/LearningJavaScript/tree/master/practice/travel_site) javascript 코드 단순화
+  ```html
+  <script>
+    function clickHome() {
+      $('#photo').attr('src', 'images/home.png');
+      // $('선택자).attr('변경할 속성', '지정할 내용')
+      $('#home').css('font-weight', 'bold');
+      // $('선택자).css('css 속성', '지정할 내용')
+    }
+  </script>
+  ```
