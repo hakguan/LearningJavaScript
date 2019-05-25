@@ -21,6 +21,14 @@ Leaning JavaScript with internet!
 * CSS : 웹사이트 디자인
 * JS : 웹에서의 인터랙선(Interaction)
 
+## 연습파일
+### [기초 연습파일(basic_exercise)](https://github.com/hakguan/LearningJavaScript/tree/master/basic_exercise)
+1. 데이터를 다루는 법
+2. 코드의 흐름 - 함수
+3. 코드의 흐름 - 반복문
+
+
+
 ## 1. 데이터를 다루는 법
 
 ### 변수와 상수
