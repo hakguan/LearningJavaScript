@@ -585,3 +585,35 @@ console.log(person.name); // Dongwook
     }
   </script>
   ```
+  
+### Event
+HTML, Javascript에서 event란 HTML 요소들에게 일어날 수 있는 일들을 의미함  
+- 사용자가 요소를 **클릭한다**
+- 마우스가 요소 **위로 올라온다**
+- 마우수가 요소 **밖으로 나간다**
+- 페이지 **로딩이 끝난다**
+
+#### Event Handling
+Event가 발생할 경우 어떠한 동작이 일어나도록 프로그래밍 하는 것을 이벤트 핸들링(Event Handling)이라고 함
+|        Event         |       Event Handling       |
+| :------------------: | :------------------------: |
+| `<a>` 태그를 **클릭**할 경우 | **이미지가 바뀌고 폰트가 굵어**지도록 한다. |
+
+- [travel_site](https://github.com/hakguan/LearningJavaScript/tree/master/practice/travel_site)에서 image에 마우스가 위치할 경우/벗어날 경우 각각 그림자가 생기고/없어지도록 이벤트 핸들링  
+  
+  ```Html
+  <body>
+      <img id="photo" src="images/home.png" width="90%" 
+      onmouseenter='mouseEnterPhoto();' 
+      onmouseleave='mouseLeavePhoto();'>
+  </body>
+
+  <script>
+    function mouseEnterPhoto() {
+      $('#photo').css('box-shadow', '5px 10px');
+    }
+    function mouseLeavePhoto() {
+      $('#photo').css('box-shadow', 'none');
+    } 
+  </script>
+  ```

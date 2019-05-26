@@ -17,7 +17,9 @@
         <a id="paris" onclick="clickParis();">Paris</a>
     </div>
 
-    <img id="photo" src="images/home.png" width="90%">
+    <!-- 마우스가 그림에 위치할 경우/벗어날 경우에 대한 함수 추가 -->
+    <img id="photo" src="images/home.png" width="90%" onmouseenter='mouseEnterPhoto();'
+        onmouseleave='mouseLeavePhoto();'>
 
     <!-- jQuery를 사용할 수 있도록 하는 부분 -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -55,6 +57,16 @@
             $('#seoul').css('font-weight', 'normal');
             $('#tokyo').css('font-weight', 'normal');
             $('#paris').css('font-weight', 'bold');
+        }
+
+        // 마우스가 그림 위에 왔을 때 그림자가 생기고, 
+        // 마우스가 그림에서 벗어났을 때 그림자가 사라지도록 하는 함수
+        function mouseEnterPhoto() {
+            $('#photo').css('box-shadow', '5px 10px');
+        }
+
+        function mouseLeavePhoto() {
+            $('#photo').css('box-shadow', 'none');
         }
     </script>
 </body>
