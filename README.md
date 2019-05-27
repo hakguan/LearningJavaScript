@@ -599,7 +599,7 @@ Event가 발생할 경우 어떠한 동작이 일어나도록 프로그래밍 �
 | :------------------: | :------------------------: |
 | `<a>` 태그를 **클릭**할 경우 | **이미지가 바뀌고 폰트가 굵어**지도록 한다. |
 
-- [travel_site](https://github.com/hakguan/LearningJavaScript/tree/master/practice/travel_site)에서 image에 마우스가 위치할 경우/벗어날 경우 각각 그림자가 생기고/없어지도록 이벤트 핸들링  
+* [travel_site](https://github.com/hakguan/LearningJavaScript/tree/master/practice/travel_site)에서 image에 마우스가 위치할 경우/벗어날 경우 각각 그림자가 생기고/없어지도록 이벤트 핸들링  
   
   ```Html
   <body>
@@ -617,3 +617,48 @@ Event가 발생할 경우 어떠한 동작이 일어나도록 프로그래밍 �
     } 
   </script>
   ```
+  
+* HTML 문서를 단순하게 하고, `<scipt>` 태그 내에 javascript 코드를 작성
+  + 예시1
+  
+    ```html
+    <!-- before -->
+    <a id="home" onclick="clickHome();">Home</a>
+
+    <!-- after -->
+    <a id="home">Home</a>
+
+    <script>
+      $('home').on('click', clickHome); 
+      // $('선택자').메소드('파라미터', 함수명);
+      // on method의 첫번째 파라미터로 문자열 'click'을, 두번째 파라미터로 함수명을 넘겨주면,
+      // before 부분의 onclick="함수명();"과 동일해짐 
+    </script>
+    ```
+      - 예시1 에서 `$('home').on('click', clickHome);` 부분은 event를 등록하는 코드이며, event handling은 `clickHome` 함수를 뜻함
+      - 예시1의 jQuery와 Vanilla JavaScript 비교
+  
+        ```javascript
+        // jQuery
+        $('#home').on('click', clickHome);
+
+        // Vanilla JavaScript
+        document.getElementById('home').addEventListener('click', clickHome);
+        ```
+  + 예시2
+  
+    ```html
+    <!-- before -->
+    <img id="photo" src="images/home.png" width="90%" onmouseenter='mouseEnterPhoto();' onmouseleave='mouseLeavePhoto();'>
+
+    <!-- after -->
+    <img id="photo" src="images/home.png" width="90%">
+
+    <script>
+      $('#photo').on('mouseenter', mouseEnterPhoto);
+      $('#photo').on('mouseleave', mouseLeavePhoto);
+      // 예시1과 동일한 방식으로 코드 작성
+    </script>
+    ```
+  
+    
