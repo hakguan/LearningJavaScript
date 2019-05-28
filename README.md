@@ -660,5 +660,41 @@ Event가 발생할 경우 어떠한 동작이 일어나도록 프로그래밍 �
       // 예시1과 동일한 방식으로 코드 작성
     </script>
     ```
-  
-    
+      
+* 키보드 event handling 
+  + 1, 2, 3, 4를 키보드로 입력하는 event에 대한 event handling
+    - 아래 코드를 추가할 경우 키보드에서 입력이 발생할 경우 clickHome 함수가 작동하게 되어서 다른 페이지에 있을 때 키보드에서 입력이 발생하면 Home 페이지로 이동함
+      ```javascript
+      $(document).on('keydown', processKeyEvent);
+      
+      function processKeyEvent() {
+        clickHome();
+      }
+      ```
+  + 특정 값이 입력될 떄의 event handling
+    1. 객채(object 확인)  
+      - 아래 코드를 시행하고 console을 확인하면 event와 관련된 객체의 property와 value를 확인할 수 있음
+      - 그 중 key라는 property의 value를 확인하면 사용자가 입력한 값을 확인할 수 있으며, 이 property를 사용하여 특정 값이 입력되는 event에 대한 event handling을 할 수 있음
+      ```javascript
+      $(document).on('keydown', processKeyEvent);
+
+      function processKeyEvent(event) {
+        console.log(event);
+      }
+      ```
+    2. 특정 값이 입력될 경우에 대한 event handling 함수 작성
+      ```javascript
+      $(document).on('keydown', processKeyEvent);
+
+      function processKeyEvent(event) {
+        if (event['key'] === '1') {
+          clickHome();
+        } else if (event['key'] === '2') {
+          clickSeoul();
+        } else if (event['key'] === '3') {
+          clickTokyo();
+        } else if (event['key'] === '4') {
+          clickParis();
+        } 
+      }
+      ```

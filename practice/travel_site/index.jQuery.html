@@ -37,6 +37,9 @@
         $('#photo').on('mouseenter', mouseEnterPhoto);
         $('#photo').on('mouseleave', mouseLeavePhoto);
 
+        // 키보드 event handling
+        $(document).on('keydown', processKeyEvent);
+
         // 사진 및 폰트 굵기를 바꿔주는 함수
         function clickHome() {
             $('#photo').attr('src', 'images/home.png')
@@ -78,6 +81,19 @@
 
         function mouseLeavePhoto() {
             $('#photo').css('box-shadow', 'none');
+        }
+
+        // 키보드 event handling 함수
+        function processKeyEvent(event) {
+            if (event['key'] === '1') {
+                clickHome();
+            } else if (event['key'] === '2') {
+                clickSeoul();
+            } else if (event['key'] === '3') {
+                clickTokyo();
+            } else if (event['key'] === '4') {
+                clickParis();
+            }
         }
     </script>
 </body>
