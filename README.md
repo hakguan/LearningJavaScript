@@ -5,10 +5,19 @@ Leaning JavaScript with internet!
 
 ## codeit : JavaScript로 배우는 '인터렉티브 웹'
 
-### 브라우저에서 코딩할 수 있는 서비스
+### 도움이 되는 웹 사이트
+1. 브라우저에서 코딩할 수 있는 서비스
 * [repl.it](https://repl.it/)
 * [Codenvy](https://codenvy.com/)
 * [Cloud9](https://aws.amazon.com/ko/cloud9/?origin=c9io)
+
+2. 기타(Q&A, test 등)
+   1. [Google](https://www.google.com)
+   2. [Stack Overflow](https://stackoverflow.com/)
+   3. [JSFiddle](https://jsfiddle.net/)
+   4. [W3Schools](https://www.w3schools.com/)
+   5. [MDN JavaScript Document](https://developer.mozilla.org/bm/docs/Web/JavaScript) : Mozilla Developer Network(MDN)에서 제공하는 JavaScript 문서(튜토리얼, 스타일 가이드, 각 기능에 대한 설명 등)
+
 
 ### 개요
 
@@ -27,7 +36,26 @@ Leaning JavaScript with internet!
 2. 코드의 흐름 - 함수
 3. 코드의 흐름 - 반복문
 
-
+# Table of Contents
+  
+- [1. 데이터를 다루는 법](#1-데이터를-다루는-법) 
+    - [변수와 상수](#변수와-상수)  
+    - [데이터의 형태 : 자료형](#데이터의-형태--자료형) 
+    - [배열(array)](#배열array) 
+    - [객체](#객체) 
+- [2. 코드의 흐름 - 함수](#2-코드의-흐름---함수) 
+    - [함수](#함수) 
+    - [조건문](#조건문) 
+- [3. 코드의 흐름 - 반복문](#3-코드의-흐름---반복문) 
+    - [반복문](#반복문) 
+- [4. HTML, CSS와의 콜라보레이션](#4-html-css와의-콜라보레이션) 
+    - [jQuery](#jquery) 
+    - [Event](#event) 
+- [5. JavaScript의 패키지](#5-JavaScript의-패키지)
+    - [Math](#math)
+    - [String](#string)
+    - [Array](#array)
+    - [Date](#date)
 
 ## 1. 데이터를 다루는 법
 
@@ -698,3 +726,9 @@ Event가 발생할 경우 어떠한 동작이 일어나도록 프로그래밍 �
         } 
       }
       ```
+
+## 5. JavaScript의 패키지
+### Math
+### String
+### Array
+### Date
