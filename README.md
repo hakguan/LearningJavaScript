@@ -729,6 +729,221 @@ Event가 발생할 경우 어떠한 동작이 일어나도록 프로그래밍 �
 
 ## 5. JavaScript의 패키지
 ### Math
+[Math 참고링크](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math)  
+
+**절댓값 (Absolute Number)**
+   ```Javascript
+   console.log(Math.abs(-10));
+   // 10
+   ```
+
+**최댓값 (Maximum)**
+   ```Javascript
+   console.log(Math.max(2, -1, 4, 5, 0));
+   // 5
+   ```
+
+**최솟값 (Minimum)**
+   ```Javascript
+   console.log(Math.min(2, -1, 4, 5, 0));
+   //-1
+   ```
+
+**거듭제곱 (Exponentiation)**
+   ```Javascript
+   console.log(Math.pow(2, 3));
+   // 8
+   ```
+
+**제곱근 (Square Root)**
+   ```Javascript
+   console.log(Math.sqrt(25));
+   // 5
+   ```
+
+**반올림 (Round)**
+   ```Javascript
+   console.log(Math.round(2.3));
+   // 2
+   ```
+
+**버림과 올림 (Floor and Ceil)**
+   ```Javascript
+   console.log(Math.floor(2.8));
+   // 2
+   console.log(Math.ceil(2.4));
+   // 3
+   ```
+
+**난수 (Random)**
+   ```Javascript
+   console.log(Math.random());
+   // Math.random을 하면 0 이상 1 이하의 값이 랜덤으로 리턴됨
+   ```
+  
 ### String
+[String 참고링크](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/prototype)  
+
+**문자열의 길이**  
+   `str.length`
+   ```Javascript
+   var str = 'String';
+   console.log(str.length);
+   // 6
+   ```
+
+**특정 인덱스의 문자 받아오기**  
+   `str.charAt(index)`
+   ```Javascript
+   var str = 'String';
+   console.log(str.charAt(2));
+   // r
+   ```
+   `str.charAt(index)`와 `str[index]`의 차이
+
+**문자열 안에서 다른 문자열 검색**  
+   `str.indexOf(searchValue)`
+   1. 문자열(searchValue)이 포함되어 있을 경우 `1` 리턴
+   2. 문자열이 포함되어 있지 않을 경우 `-1` 리턴
+   3. 문자열이 여러번 포함되어 있을 경우 처음 발견된 `index`가 리턴  
+  
+   ```Javascript
+   var str = 'Hello World!';
+   console.log(str.indexOf('e'));   // 1
+   console.log(str.indexOf('k'));   // -1
+   console.log(str.indexOf('orl')); // 1
+   console.log(str.indexOf('o'));   // 4
+   ```
+   문자열이 여러번 포함되어 있을 경우 마지막 `index` 찾기  
+   `str.lastIndexOf(searchValue)`
+   ```Javascript
+   var str = 'Hello World!';
+   console.log(str.indexOf('o'))    // 4
+   console.log(str.lastIndexOf('o'))// 7
+   ```
+
+**대소문자 변환**  
+1. 대문자로 바꾸기  
+   `str.toUpperCase()`
+   ```Javascript
+   var str = 'String';
+   console.log(str.toUpperCase());
+   // STRING
+   ```
+2. 소문자로 바꾸기  
+   `str.toLowerCase()`  
+   ```Javascript
+   var str = 'String';
+   console.log(str.toLowerCase());
+   // string
+   ```
+
+**문자열 자르기**  
+1. 시작 지점과 긑 지점으로 자르기
+   `str.substring(indexStart, indexEnd)`
+   ```Javascript
+   var str = 'Hello World';
+   console.log(str.substring(2,5)); // llo
+   console.log(str.substring(2));   // llo World!
+   ```
+
+2. 시작 지점과 길이로 자르기  
+   `str.substr(start, length)`
+   ```Javascript
+   var str = 'Hello World!';
+   console.log(str.substr(2, 5));
+   // llo W
+   ```
+
+**앞뒤 공백 없애기**  
+   `str.trim()`
+   ```Javascript
+   var str = '      Hello    World!     ';
+   console.log(str.trim());
+   // Hello    World!
+   ```
+  
 ### Array
+[Array 참고링크](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array)  
+
+**배열의 길이**  
+   `array.length`
+   ```Javascript
+   var brands = ['Apple', 'Coca-Cola', 'Starbucks'];
+
+   console.log(brands.length);
+   // 3
+   ```
+
+**배열에서 특정 값 찾기**  
+   `array.indexOf(item)`  
+   1. `item`이 포함되어 있는 경우 `item`의 `index`가 리턴
+   2. 포함되어 있지 않은 경우 `-1`이 리턴
+   3. 여러번 포함되어 있는 경우 처음 발견된 `index`가 리턴
+   ```Javascript
+   var brands = ['Apple', 'Coca-Cola', 'Starbucks'];
+
+   console.log(brands.indexOf('Starbucks')); // 2
+   console.log(brands.indexOf('Kakao'));     // -1
+   ```
+
+**배열에 값 추가**  
+   `array.push(item1)`
+   ```Javascript
+   var brands = ['Apple', 'Coca-Cola', 'Starbucks'];
+
+   brands.push('Kakao');
+   console.log(brands);
+   // ['Apple', 'Coca-Cola', 'Starbucks', 'Kakao']
+   brands.push('Samsung', 'LG', 'Facebook');
+   console.log(brands);
+   // ['Apple', 'Coca-Cola', 'Starbucks', 'Kakao', 'Samsung', 'LG', 'Facebook']
+   ```
+
+**배열에서 값 빼기**  
+   `array.pop()`
+   ```Javascript
+   var brands = ['Apple', 'Coca-Cola', 'Starbucks'];
+
+   var lastBrand = brands.pop();
+   console.log(lastBrand);
+   // Starbucks
+   console.log(brands);
+   // ['Apple, 'Coca-cola']
+   ```
+
+**배열을 문자열로 바꾸기**  
+   `brands.join()`
+   기본값으로 각 `item`은 `,`로 연결됨
+   ```Javascript
+   var brands = ['Apple', 'Coca-Cola',  'Starbucks'];
+   
+   console.log(brands.join());
+   // Apple,Coca-Cola,Starbucks
+   ```
+   파라미터로 `,`를 대체할 문자열을 입력할 수 있음
+   ```Javascript
+   var brands = ['Apple', 'Coca-Cola',  'Starbucks'];
+   
+   console.log(brands.join('###'));
+   // Apple###Coca-Cola###Starbucks
+   ```
+   
 ### Date
+[Date 참고링크](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/prototype)  
+
+날짜와 관련된 프로그램을 만들고 싶을 때 `Date` 객체를 활용할 수 있음  
+
+1. **객체 만들기**  
+  
+현재 날짜로 설정
+```Javascript
+var date = new Date();
+// 파라미터가 없을 경우 
+//현재 날짜로 설정되어 있는 Date 객체가 턴됨
+```
+원하는 날자로 설정
+```Javascript
+
+
+1. 날짜 정보 받아오기
