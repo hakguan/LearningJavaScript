@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Consulting Market</title>
+    <meta charset="utf-8" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="hero-header">
+        <div class="navbar">
+            <a href="#" id="logo">
+                <img src="images/logo.png" width="230">
+            </a>
+
+            <ul class="menu menu-left">
+                <li><a href="#">PRODUCTS</a></li>
+                <li><a href="#">BLOG</a></li>
+            </ul>
+
+            <ul class="menu menu-right">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">LOGIN</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="left">
+                <h2>더 많은 <b>정보와 이벤트</b> 등을<br> 받아보고 싶으면 <b>이메일을 입력해주세요!</b></h2>
+
+                <input id="email-input" type="email" placeholder="이메일">
+                <input id="submit-btn" type="submit" value="Send">
+            </div>
+
+            <img id="main-img" src="images/desk.png" width="400">
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>
+        // 여기에 코드를 입력하세요.
+
+        // input event에 대한 event handling 정의
+        $(document).on('input', inputEvent);
+
+        // event hadling 함수 정의
+        function inputEvent() {
+            var email = $('#email-input').val(); // 입력값 받아오기
+
+            // checkEmail 함수를 통해 조건 확인
+            if (checkEmail(email)) {
+                $('#submit-btn').css('background-color', '#4D79C2');
+            } else {
+                $('#submit-btn').css('background-color', '#9E9E9E');
+            }
+        }
+
+        // 조건 확인을 위한 checkEmail 함수 정의 
+        function checkEmail(str) {
+            console.log(str.indexOf('@'))
+            if (str.indexOf('@') > -1) { // @가 str에 존재할 경우
+                var index = str.lastIndexOf('@'); // @의 마지막 index 값을 index 변수에 지정
+                if (str.substring(index).indexOf('.') > 0) {
+                    // @가 위치한 index 부터 끝까지 .가 1개 이상 존재하는지 확인
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        }
+
+        // function checkEmail(str) {
+        //     for (var i = 0; i < str.length; i++) {
+        //         if (str[i] === '@') {
+        //             for (var j = i; j < str.length; j++) {
+        //                 if (str[j] === '.') {
+        //                     return true;
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     return false;
+        // }
+    </script>
+</body>
+
+</html>
