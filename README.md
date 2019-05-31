@@ -657,13 +657,13 @@ Event가 발생할 경우 어떠한 동작이 일어나도록 프로그래밍 �
     <a id="home">Home</a>
 
     <script>
-      $('home').on('click', clickHome); 
+      $('#home').on('click', clickHome); 
       // $('선택자').메소드('파라미터', 함수명);
       // on method의 첫번째 파라미터로 문자열 'click'을, 두번째 파라미터로 함수명을 넘겨주면,
       // before 부분의 onclick="함수명();"과 동일해짐 
     </script>
     ```
-      - 예시1 에서 `$('home').on('click', clickHome);` 부분은 event를 등록하는 코드이며, event handling은 `clickHome` 함수를 뜻함
+      - 예시1 에서 `$('#home').on('click', clickHome);` 부분은 event를 등록하는 코드이며, event handling은 `clickHome` 함수를 뜻함
       - 예시1의 jQuery와 Vanilla JavaScript 비교
   
         ```javascript
@@ -803,7 +803,7 @@ console.log(str.charAt(2));
 
 **문자열 안에서 다른 문자열 검색**  
 `str.indexOf(searchValue)`
-1. 문자열(searchValue)이 포함되어 있을 경우 `1` 리턴
+1. 문자열(searchValue)이 포함되어 있을 경우 문자열이 시작되는 `index` 리턴
 2. 문자열이 포함되어 있지 않을 경우 `-1` 리턴
 3. 문자열이 여러번 포함되어 있을 경우 처음 발견된 `index`가 리턴  
 
@@ -811,7 +811,7 @@ console.log(str.charAt(2));
 var str = 'Hello World!';
 console.log(str.indexOf('e'));   // 1
 console.log(str.indexOf('k'));   // -1
-console.log(str.indexOf('orl')); // 1
+console.log(str.indexOf('orl')); // 7
 console.log(str.indexOf('o'));   // 4
 ```
 문자열이 여러번 포함되어 있을 경우 마지막 `index` 찾기  
@@ -841,11 +841,13 @@ console.log(str.toLowerCase());
 
 **문자열 자르기**  
 
-시작 지점과 긑 지점으로 자르기
-`str.substring(indexStart, indexEnd)`
+시작 지점과 긑 지점으로 자르기  
+`str.substring(indexStart, indexEnd)`  
+
 ```Javascript
 var str = 'Hello World';
 console.log(str.substring(2,5)); // llo
+// index 2 부터 index 4 까지
 console.log(str.substring(2));   // llo World!
 ```
 
@@ -966,7 +968,7 @@ var date6 = new Date('Dec 15 1999');
 
 Date 객체의 메소드를 활용해서 날짜 정보를 받아올 수 있음
 ```Javascript
-var Date = new Date('June 11, 1988 05:25:30');
+var date = new Date('June 11, 1988 05:25:30');
 
 console.log(date.getFullYear());        // 1988
 console.log(date.getMonth());           // 5
