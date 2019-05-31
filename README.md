@@ -732,218 +732,270 @@ Event가 발생할 경우 어떠한 동작이 일어나도록 프로그래밍 �
 [Math 참고링크](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math)  
 
 **절댓값 (Absolute Number)**
-   ```Javascript
-   console.log(Math.abs(-10));
-   // 10
-   ```
+```Javascript
+console.log(Math.abs(-10));
+// 10
+```
 
 **최댓값 (Maximum)**
-   ```Javascript
-   console.log(Math.max(2, -1, 4, 5, 0));
-   // 5
-   ```
+```Javascript
+console.log(Math.max(2, -1, 4, 5, 0));
+// 5
+```
 
 **최솟값 (Minimum)**
-   ```Javascript
-   console.log(Math.min(2, -1, 4, 5, 0));
-   //-1
-   ```
+```Javascript
+console.log(Math.min(2, -1, 4, 5, 0));
+//-1
+```
 
 **거듭제곱 (Exponentiation)**
-   ```Javascript
-   console.log(Math.pow(2, 3));
-   // 8
-   ```
+```Javascript
+console.log(Math.pow(2, 3));
+// 8
+```
 
 **제곱근 (Square Root)**
-   ```Javascript
-   console.log(Math.sqrt(25));
-   // 5
-   ```
+```Javascript
+console.log(Math.sqrt(25));
+// 5
+```
 
 **반올림 (Round)**
-   ```Javascript
-   console.log(Math.round(2.3));
-   // 2
-   ```
+```Javascript
+console.log(Math.round(2.3));
+// 2
+```
 
 **버림과 올림 (Floor and Ceil)**
-   ```Javascript
-   console.log(Math.floor(2.8));
-   // 2
-   console.log(Math.ceil(2.4));
-   // 3
-   ```
+```Javascript
+console.log(Math.floor(2.8));
+// 2
+console.log(Math.ceil(2.4));
+// 3
+```
 
 **난수 (Random)**
-   ```Javascript
-   console.log(Math.random());
-   // Math.random을 하면 0 이상 1 이하의 값이 랜덤으로 리턴됨
-   ```
+```Javascript
+console.log(Math.random());
+// Math.random을 하면 0 이상 1 이하의 값이 랜덤으로 리턴됨
+```
   
 ### String
 [String 참고링크](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/prototype)  
 
 **문자열의 길이**  
-   `str.length`
-   ```Javascript
-   var str = 'String';
-   console.log(str.length);
-   // 6
-   ```
+`str.length`
+```Javascript
+var str = 'String';
+console.log(str.length);
+// 6
+```
 
 **특정 인덱스의 문자 받아오기**  
-   `str.charAt(index)`
-   ```Javascript
-   var str = 'String';
-   console.log(str.charAt(2));
-   // r
-   ```
-   `str.charAt(index)`와 `str[index]`의 차이
+`str.charAt(index)`
+```Javascript
+var str = 'String';
+console.log(str.charAt(2));
+// r
+```
+`str.charAt(index)`와 `str[index]`의 차이
 
 **문자열 안에서 다른 문자열 검색**  
-   `str.indexOf(searchValue)`
-   1. 문자열(searchValue)이 포함되어 있을 경우 `1` 리턴
-   2. 문자열이 포함되어 있지 않을 경우 `-1` 리턴
-   3. 문자열이 여러번 포함되어 있을 경우 처음 발견된 `index`가 리턴  
-  
-   ```Javascript
-   var str = 'Hello World!';
-   console.log(str.indexOf('e'));   // 1
-   console.log(str.indexOf('k'));   // -1
-   console.log(str.indexOf('orl')); // 1
-   console.log(str.indexOf('o'));   // 4
-   ```
-   문자열이 여러번 포함되어 있을 경우 마지막 `index` 찾기  
-   `str.lastIndexOf(searchValue)`
-   ```Javascript
-   var str = 'Hello World!';
-   console.log(str.indexOf('o'))    // 4
-   console.log(str.lastIndexOf('o'))// 7
-   ```
+`str.indexOf(searchValue)`
+1. 문자열(searchValue)이 포함되어 있을 경우 `1` 리턴
+2. 문자열이 포함되어 있지 않을 경우 `-1` 리턴
+3. 문자열이 여러번 포함되어 있을 경우 처음 발견된 `index`가 리턴  
 
+```Javascript
+var str = 'Hello World!';
+console.log(str.indexOf('e'));   // 1
+console.log(str.indexOf('k'));   // -1
+console.log(str.indexOf('orl')); // 1
+console.log(str.indexOf('o'));   // 4
+```
+문자열이 여러번 포함되어 있을 경우 마지막 `index` 찾기  
+`str.lastIndexOf(searchValue)`
+```Javascript
+var str = 'Hello World!';
+console.log(str.indexOf('o'))    // 4
+console.log(str.lastIndexOf('o'))// 7
+```
+  
 **대소문자 변환**  
-1. 대문자로 바꾸기  
-   `str.toUpperCase()`
-   ```Javascript
-   var str = 'String';
-   console.log(str.toUpperCase());
-   // STRING
-   ```
-2. 소문자로 바꾸기  
-   `str.toLowerCase()`  
-   ```Javascript
-   var str = 'String';
-   console.log(str.toLowerCase());
-   // string
-   ```
+
+대문자로 바꾸기  
+`str.toUpperCase()`
+```Javascript
+var str = 'String';
+console.log(str.toUpperCase());
+// STRING
+```
+소문자로 바꾸기  
+`str.toLowerCase()`  
+```Javascript
+var str = 'String';
+console.log(str.toLowerCase());
+// string
+```
 
 **문자열 자르기**  
-1. 시작 지점과 긑 지점으로 자르기
-   `str.substring(indexStart, indexEnd)`
-   ```Javascript
-   var str = 'Hello World';
-   console.log(str.substring(2,5)); // llo
-   console.log(str.substring(2));   // llo World!
-   ```
 
-2. 시작 지점과 길이로 자르기  
-   `str.substr(start, length)`
-   ```Javascript
-   var str = 'Hello World!';
-   console.log(str.substr(2, 5));
-   // llo W
-   ```
+시작 지점과 긑 지점으로 자르기
+`str.substring(indexStart, indexEnd)`
+```Javascript
+var str = 'Hello World';
+console.log(str.substring(2,5)); // llo
+console.log(str.substring(2));   // llo World!
+```
+
+시작 지점과 길이로 자르기  
+`str.substr(start, length)`
+```Javascript
+var str = 'Hello World!';
+console.log(str.substr(2, 5));
+// llo W
+```
 
 **앞뒤 공백 없애기**  
-   `str.trim()`
-   ```Javascript
-   var str = '      Hello    World!     ';
-   console.log(str.trim());
-   // Hello    World!
-   ```
-  
+`str.trim()`
+```Javascript
+var str = '      Hello    World!     ';
+console.log(str.trim());
+// Hello    World!
+```
+
 ### Array
 [Array 참고링크](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array)  
 
 **배열의 길이**  
-   `array.length`
-   ```Javascript
-   var brands = ['Apple', 'Coca-Cola', 'Starbucks'];
+`array.length`
+```Javascript
+var brands = ['Apple', 'Coca-Cola', 'Starbucks'];
 
-   console.log(brands.length);
-   // 3
-   ```
+console.log(brands.length);
+// 3
+```
 
 **배열에서 특정 값 찾기**  
-   `array.indexOf(item)`  
-   1. `item`이 포함되어 있는 경우 `item`의 `index`가 리턴
-   2. 포함되어 있지 않은 경우 `-1`이 리턴
-   3. 여러번 포함되어 있는 경우 처음 발견된 `index`가 리턴
-   ```Javascript
-   var brands = ['Apple', 'Coca-Cola', 'Starbucks'];
+`array.indexOf(item)`  
+1. `item`이 포함되어 있는 경우 `item`의 `index`가 리턴
+2. 포함되어 있지 않은 경우 `-1`이 리턴
+3. 여러번 포함되어 있는 경우 처음 발견된 `index`가 리턴
+```Javascript
+var brands = ['Apple', 'Coca-Cola', 'Starbucks'];
 
-   console.log(brands.indexOf('Starbucks')); // 2
-   console.log(brands.indexOf('Kakao'));     // -1
-   ```
+console.log(brands.indexOf('Starbucks')); // 2
+console.log(brands.indexOf('Kakao'));     // -1
+```
 
 **배열에 값 추가**  
-   `array.push(item1)`
-   ```Javascript
-   var brands = ['Apple', 'Coca-Cola', 'Starbucks'];
+`array.push(item1)`
+```Javascript
+var brands = ['Apple', 'Coca-Cola', 'Starbucks'];
 
-   brands.push('Kakao');
-   console.log(brands);
-   // ['Apple', 'Coca-Cola', 'Starbucks', 'Kakao']
-   brands.push('Samsung', 'LG', 'Facebook');
-   console.log(brands);
-   // ['Apple', 'Coca-Cola', 'Starbucks', 'Kakao', 'Samsung', 'LG', 'Facebook']
-   ```
+brands.push('Kakao');
+console.log(brands);
+// ['Apple', 'Coca-Cola', 'Starbucks', 'Kakao']
+brands.push('Samsung', 'LG', 'Facebook');
+console.log(brands);
+// ['Apple', 'Coca-Cola', 'Starbucks', 'Kakao', 'Samsung', 'LG', 'Facebook']
+```
 
 **배열에서 값 빼기**  
-   `array.pop()`
-   ```Javascript
-   var brands = ['Apple', 'Coca-Cola', 'Starbucks'];
+`array.pop()`
+```Javascript
+var brands = ['Apple', 'Coca-Cola', 'Starbucks'];
 
-   var lastBrand = brands.pop();
-   console.log(lastBrand);
-   // Starbucks
-   console.log(brands);
-   // ['Apple, 'Coca-cola']
-   ```
+var lastBrand = brands.pop();
+console.log(lastBrand);
+// Starbucks
+console.log(brands);
+// ['Apple, 'Coca-cola']
+```
 
 **배열을 문자열로 바꾸기**  
-   `brands.join()`
-   기본값으로 각 `item`은 `,`로 연결됨
-   ```Javascript
-   var brands = ['Apple', 'Coca-Cola',  'Starbucks'];
-   
-   console.log(brands.join());
-   // Apple,Coca-Cola,Starbucks
-   ```
-   파라미터로 `,`를 대체할 문자열을 입력할 수 있음
-   ```Javascript
-   var brands = ['Apple', 'Coca-Cola',  'Starbucks'];
-   
-   console.log(brands.join('###'));
-   // Apple###Coca-Cola###Starbucks
-   ```
+`brands.join()`
+기본값으로 각 `item`은 `,`로 연결됨
+```Javascript
+var brands = ['Apple', 'Coca-Cola',  'Starbucks'];
+
+console.log(brands.join());
+// Apple,Coca-Cola,Starbucks
+```
+파라미터로 `,`를 대체할 문자열을 입력할 수 있음
+```Javascript
+var brands = ['Apple', 'Coca-Cola',  'Starbucks'];
+
+console.log(brands.join('###'));
+// Apple###Coca-Cola###Starbucks
+```
    
 ### Date
 [Date 참고링크](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/prototype)  
 
 날짜와 관련된 프로그램을 만들고 싶을 때 `Date` 객체를 활용할 수 있음  
 
-1. **객체 만들기**  
-  
-현재 날짜로 설정
+**객체 만들기**  
+
+현재 날짜로 설정  
+`new Date();`
 ```Javascript
-var date = new Date();
 // 파라미터가 없을 경우 
-//현재 날짜로 설정되어 있는 Date 객체가 턴됨
+//현재 날짜로 설정되어 있는 Date 객체가 리턴됨
+var date = new Date();
 ```
-원하는 날자로 설정
+원하는 날자로 설정  
+`new Date('date')`
 ```Javascript
+// 파라미터를 사용해서 원하는 날자로 설정할 수 있음
+// 날짜만 쓸 경우, 0시 0분 0초로 지정됨
 
+//1988년 6월 11일 5시 25분 30초
+var date1 = new Date('June 11, 1988 05:25:30');
+var date2 = new Date('1988-06-11T05:25:30');
 
-1. 날짜 정보 받아오기
+// 1999년 12월 15일 (날짜만)
+var date3 = new Date('1999-12-15');
+var date4 = new Date('12/15/1999');
+var date5 = new Date('December 15 1999');
+var date6 = new Date('Dec 15 1999');
+```
+
+**날짜 정보 받아오기**  
+
+Date 객체의 메소드를 활용해서 날짜 정보를 받아올 수 있음
+```Javascript
+var Date = new Date('June 11, 1988 05:25:30');
+
+console.log(date.getFullYear());        // 1988
+console.log(date.getMonth());           // 5
+// getMonth() method는 0부터 시작해 5는 6월을 의미함
+console.log(date.getDate());            // 11
+console.log(date.getDay());             // 6
+// getDay() method는 일요일부터 0에서 시작해 6을 토요일을 의미함
+console.log(date.getHours());           // 5
+console.log(date.getMinutes());         // 25
+console.log(date.getSeconds());         // 30
+console.log(date.getMilliseconds());    // 0
+console.log(date.toString());           // Sat Jun 11 1988 05:25:30 GMT+1000 (KDT)
+console.log(date.toLocaleString());     // 6/11/1988, 5:25:30 AM
+console.log(date.toLocaleDateString()); // 6/11/198
+console.log(date.toLocaleTimeString()); // 5:25:30 AM
+```
+
+`getTime()` method는 1970년 1월 1일 자정으로부터 몇 ms가 지났는지를 리턴함
+```Javascript
+var date = new Date('June 11, 1988 05:25:30');
+console.log(date.getTime());
+// 581973930000
+```
+
+리턴된 ms값을 사용해 초, 분, 시, 일 등의 단위로 변환할 수 있음
+```Javascript
+var date = new Date('September 24, 1989 09:45:30');
+console.log(date.getTime() + 'ms');                   // 622601130000ms
+console.log(date.getTime()/1000 + '초');              // 622601130초
+console.log(date.getTime()/1000/60 + '분');           // 10376685.5분
+console.log(date.getTime()/1000/60/60 + '시간');      // 172944.75833333333시간
+```
