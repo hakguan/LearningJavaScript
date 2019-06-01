@@ -69,6 +69,36 @@
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script>
         // 여기에 코드를 입력하세요.
+        var loop = new Audio('audio/loop.mp3');
+
+        $('#play-btn').on('click', playMusic);
+        $('#stop-btn').on('click', stopMusic);
+
+        $(document).on('keydown', addClassName);
+        $(document).on('keyup', subClassName);
+
+        // play, stop 버튼 함수
+        function playMusic() {
+            loop.play();
+        }
+
+        function stopMusic() {
+            loop.pause();
+            loop.currentTime = 0;
+        }
+
+        // keyboard 이벤트 추가
+        function addClassName() {
+            var keyboardInput = event['key'];
+            var cellId = '#cell' + String(keyboardInput);
+            console.log(cellId);
+
+            $(cellId).addClass('playing');
+        }
+
+        function subClassName() {
+            $('.cell').removeClass('playing');
+        }
     </script>
 </body>
 
