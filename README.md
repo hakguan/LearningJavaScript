@@ -1001,3 +1001,34 @@ console.log(date.getTime()/1000 + '초');              // 622601130초
 console.log(date.getTime()/1000/60 + '분');           // 10376685.5분
 console.log(date.getTime()/1000/60/60 + '시간');      // 172944.75833333333시간
 ```
+
+## 6. Audio
+Audio 객채를 사용하여 소리를 재생할 수 있고,   
+소리의 상태는 크게 **'생성'**, **'재생'**, **'정지'** 의 3단계로 나눌 수 있음
+```Javascript
+var audioFile = new Audio('file location or url'); // 생성
+audioFile.play();                                  // 재생
+audioFile.pause();                                 // 정지
+
+// audio의 시작점으로 돌아가고 싶을 경우
+audioFile.currentTime = 0; // audio 파일 재생 위치 설정
+```
+
+**예시코드**  
+```javascript
+var audioFile = new Audio("https://d34x6xks9kc6p2.cloudfront.net/540997b0-a35f-4b69-86d6-b1c925c4a264/540997b0-a35f-4b69-86d6-b1c925c4a264.mp3");
+
+function playMusic() {
+    audioFile.play();
+}
+
+function stopMusic() {
+    audioFile.pause();
+    audioFile.currentTime = 0; 
+    // '멈춤' 버튼을 누른 후에는 오디오의 시작 지점을 처음으로 다시 돌려주기.
+}
+
+// HTML 코드에서 play, stop 버튼을 클릭하는 event에 대한 event handling
+$('#playBtn').on('click', playMusic);
+$('#stopBtn').on('click', stopMusic);
+```
