@@ -69,15 +69,23 @@
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script>
         // 여기에 코드를 입력하세요.
-        var loop = new Audio('audio/loop.mp3');
 
+        var loop = new Audio('audio/loop.mp3');
+        var musicFiles = [];
+        musicFiles.push(new Audio('audio/01_kick_drum.wav'))
+        musicFiles.push(new Audio('audio/02_closed_hihat.wav'))
+        musicFiles.push(new Audio('audio/03_open_hihat.wav'))
+        musicFiles.push(new Audio('audio/04_clap.wav'))
+        musicFiles.push(new Audio('audio/05_snap.wav'))
+        musicFiles.push(new Audio('audio/06_crash.wav'))
+        musicFiles.push(new Audio('audio/07_tom1.wav'))
+        musicFiles.push(new Audio('audio/08_tom2.wav'))
+        musicFiles.push(new Audio('audio/09_tambourine.wav'))
+
+        // loop
         $('#play-btn').on('click', playMusic);
         $('#stop-btn').on('click', stopMusic);
 
-        $(document).on('keydown', addClassName);
-        $(document).on('keyup', subClassName);
-
-        // play, stop 버튼 함수
         function playMusic() {
             loop.play();
         }
@@ -87,16 +95,20 @@
             loop.currentTime = 0;
         }
 
-        // keyboard 이벤트 추가
-        function addClassName() {
-            var keyboardInput = event['key'];
-            var cellId = '#cell' + String(keyboardInput);
-            console.log(cellId);
+        // keyboard event
+        $(document).on('keydown', keyEventsAdd);
+        $(document).on('keyup', keyEventsSub);
 
-            $(cellId).addClass('playing');
+        function keyEventsAdd() {
+            if (event.key >= 1 && event.key <= 9) {
+                $('#cell' + event.key).addClass('playing');
+                var fileNum = event.key - 1
+                musicFiles[fileNum].currentTime = 0;
+                musicFiles[fileNum].play();
+            }
         }
 
-        function subClassName() {
+        function keyEventsSub() {
             $('.cell').removeClass('playing');
         }
     </script>
