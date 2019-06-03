@@ -7,17 +7,21 @@ Leaning JavaScript with internet!
 
 ### 도움이 되는 웹 사이트
 1. 브라우저에서 코딩할 수 있는 서비스
-* [repl.it](https://repl.it/)
-* [Codenvy](https://codenvy.com/)
-* [Cloud9](https://aws.amazon.com/ko/cloud9/?origin=c9io)
+   + [repl.it](https://repl.it/)
+   + [Codenvy](https://codenvy.com/)
+   + [Cloud9](https://aws.amazon.com/ko/cloud9/?origin=c9io)
 
 2. 기타(Q&A, test 등)
-   1. [Google](https://www.google.com)
-   2. [Stack Overflow](https://stackoverflow.com/)
-   3. [JSFiddle](https://jsfiddle.net/)
-   4. [W3Schools](https://www.w3schools.com/)
-   5. [MDN JavaScript Document](https://developer.mozilla.org/bm/docs/Web/JavaScript) : Mozilla Developer Network(MDN)에서 제공하는 JavaScript 문서(튜토리얼, 스타일 가이드, 각 기능에 대한 설명 등)
-
+   + [Google](https://www.google.com)
+   + [Stack Overflow](https://stackoverflow.com/)
+   + [JSFiddle](https://jsfiddle.net/)
+   + [W3Schools](https://www.w3schools.com/)
+   + [MDN JavaScript Document](https://developer.mozilla.org/bm/docs/Web/JavaScript) : Mozilla Developer Network(MDN)에서 제공하는 JavaScript 문서(튜토리얼, 스타일 가이드, 각 기능에 대한 설명 등)
+   
+3. Style Guide
+   + [에어비엔비 JavaScript 스타일 가이드](https://github.com/tipjs/javascript-style-guide)
+   + [깃허브에 공유되어 있는 인기 있는 JavaScript 스타일 가이드](https://github.com/rwaldron/idiomatic.js/tree/master/translations/ko_KR)
+   + [구글 JavaScript 스타일 가이드](https://google.github.io/styleguide/jsguide.html)
 
 ### 개요
 
@@ -195,6 +199,46 @@ typeof b; //"boolean"
   (7 > 3) || (6 < -1); // true
   !(7 > 3) // !true -> false
   ```
+
+* Boolean의 활용
+  + 용어 설명  
+    - null / undefined
+    ```Javascript
+    var n = null;
+    var u;
+
+    console.log(n); // null : 비어있는 값
+    console.log(u); // undefined : 변수에 아무 것도 할당되지 않았을 때의 값
+                    // 변수가 선언만 된 경우 undefined라는 값을 갖게됨
+    ```
+    - NaN (Not a Number)
+    ```Javascript
+    var n = parseInt('abcd')
+
+    console.log(n); // NaN : 숫자가 아닌 것을 숫자로 표현하려 할 때 반환되는 값 
+    ```
+  + `false`와 `true`로 간주되는 것들
+    - 숫자 : `0`은 `false`, `다른 숫자`는 `true`
+    - 문자열 : `빈 문자열`은 '`false`, `비어있지 않은 문자열`은 `true`
+    - null, undefined, NaN : `null`, `undefined`, `NaN`은 `false`
+  + 활용
+    ```Javascript
+    // 변수 str이 빈 문자열인지 확인하는 방법
+    if (str) {
+      console.log("str은 빈 문자열이 아닙니다.");
+    } else {
+      console.log("str은 빈 문자열입니다.");
+    }
+
+    // 다른 자료형(숫자, 문자열)을 Boolean으로 변형
+    var str = '';
+    console.log(!str);    // true
+    console.log(!!str);   // false
+
+    var num = 0;
+    console.log(!0);      // true
+    console.log(!!0);     // false
+    ```
 
 #### 형변환
 `Number`와 `String`을 사용해서 숫자형, 문자열을 형변환 할 수 있음
