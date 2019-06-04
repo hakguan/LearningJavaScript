@@ -1076,3 +1076,95 @@ function stopMusic() {
 $('#playBtn').on('click', playMusic);
 $('#stopBtn').on('click', stopMusic);
 ```
+
+## 6. DOM tree
+DOM (Document Object Model) : 문서 객체 모델  
+코드를 객체(Object)로 구성된 DOM을 구성하고, 이를 시각화해서 브라우저에 보여줌
+
+**jQuery**  
+JQuery 코드는 '선택'과 '동작'으로 나눌 수 있고, 선택자를 지정하는 부분에는 다양한 선택자(id, class, css selector 등)를 사용할 수 있음
+
+**CSS 선택자**  
+특히 jQuery에서는 CSS 선택자를 그대로 사용할 수 있음
+1. 태그 이름
+   ```css
+   h1 {
+     color: orange;
+   }
+   ```
+2. 클래스 / 아이디
+   ```css
+   /* class */
+   .important {
+     color: orange;
+   }
+
+   /* id */
+   #favorite {
+     color: blue;
+   }
+   ```
+3. 자식(children)
+   ```css
+   .div i {
+     color: orange;
+   }
+   ```
+4. 직속 자식)direct children)
+   ```css
+   .div > i {
+     color: orange;
+   }
+   ```
+5. 복수선택
+   ```css
+   .two, .four {
+     color: orange;
+   }
+   ```
+6. 여러 조건
+   ```css
+   .outside.one {
+     color: blue;
+   }
+   ```
+7. Pseudo-class (가상 클래스)  
+   콜론(`:`)을 사용해서 가상 클래스를 사용할 수 있음
+   * n번째 자식
+   ```css
+   /* .div1의 자식인 <p> 태그 중 3번째 */
+   .div1 p:nth-child(3) {
+     color: blue;
+   }
+
+   /* .div1의 자식인 <p> 태그 중 첫 번째 */
+   .div1 p:first-child {
+     color: red;
+   }
+ 
+   /* .div1의 자식인 <p> 태그 중 마지막 */
+   .div1 p:last-child {
+     color: green;
+   }
+ 
+   /* .div1의 자식 중 마지막 자식이 아닌 <p> 태그 */
+   .div1 p:not(:last-child) {
+     font-size: 150%;
+   }
+ 
+   /* .div1의 자식 중 첫 번째 자식이 아닌 <p> 태그 */
+   .div1 p:not(:first-child) {
+     text-decoration: line-through;
+   }
+   ```
+   * 마우스 오버(hover)
+   ```css
+   h1 {
+     color: orange;
+   }
+
+   /* 마우스가 <h1> 태그에 올라갔을 때 */
+   h1:hover {
+     color: green;
+   }
+   ```
