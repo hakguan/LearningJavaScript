@@ -1084,8 +1084,8 @@ DOM (Document Object Model) : 문서 객체 모델
 **jQuery**  
 JQuery 코드는 '선택'과 '동작'으로 나눌 수 있고, 선택자를 지정하는 부분에는 다양한 선택자(id, class, css selector 등)를 사용할 수 있음
 
-**CSS 선택자**  
-특히 jQuery에서는 CSS 선택자를 그대로 사용할 수 있음
+**[선택]** 사용할 수 있는 CSS 선택자  
+
 1. 태그 이름
    ```css
    h1 {
@@ -1167,4 +1167,46 @@ JQuery 코드는 '선택'과 '동작'으로 나눌 수 있고, 선택자를 지�
    h1:hover {
      color: green;
    }
+   ```
+
+**[동작]** jQuery의 동작  
+
+1. Class
+   ```javascript
+   // item에 header이라는 클래스 추가
+   $('#item').addClass('header');
+
+   // item에 header이라는 클래스 제거
+   $('#item').removeClass('header');
+   
+   // item에 header이라는 클래스가 없으면 추가, 있으면 제거
+   $('#item').toggleClass('header');
+   
+   // item에 header라는 클래스가 있으면 true, 없으면 false 리턴
+   $("#item").hasClass('header');
+   ```
+2. Attribute
+   ```javascript
+   // 이미지 태그의 src 속성 받아오기
+   $('img').attr('src');
+ 
+   // 이미지 태그의 src 속성 지정하기
+   $('img').attr('src', 'images/logo.png');
+ 
+   // h1 태그의 텍스트 받아오기
+   $('h1').text();
+ 
+   // h1 태그에 텍스트 지정하기
+   $('h1').text('Hello World!');
+ 
+   // h1 태그에 HTML 텍스트 지정하기
+   $('h1').html('<b>Hello World!</b>');
+   ```
+3. Style
+   ```javascript
+   // item의 font-weight를 bold로 지정하기
+   $("#item").css('font-weight','bold');
+   
+   // item의 background-color 가져오기
+   $("#item").css('background-color');
    ```
