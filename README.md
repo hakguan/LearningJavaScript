@@ -1084,6 +1084,8 @@ DOM (Document Object Model) : 문서 객체 모델
 **jQuery**  
 JQuery 코드는 '선택'과 '동작'으로 나눌 수 있고, 선택자를 지정하는 부분에는 다양한 선택자(id, class, css selector 등)를 사용할 수 있음
 
+### 선택과 동작
+
 **[선택]** 사용할 수 있는 CSS 선택자  
 
 1. 태그 이름
@@ -1210,3 +1212,31 @@ JQuery 코드는 '선택'과 '동작'으로 나눌 수 있고, 선택자를 지�
    // item의 background-color 가져오기
    $("#item").css('background-color');
    ```
+
+### 요소의 추가
+`before`나 `after` 메소드를 사용하여 요소를 추가할 수 있음
+```javascript
+$('li').after('<li class="item">새로운 아이템</li>');
+// 모든 <li> 요소 뒤에 <li class="item">새로운 아이템</li>을 추가
+```
+
+```javascript
+$('#todo-list li:last-child').after('<li class="item">새로운 아이템</li>');
+// id가 todo-list인 항목의 마지막 <li> 요소 뒤에 <li class="item">새로운 아이템</li>을 추가
+```
+
+`append`나 `prepend` 메소드를 사용하여 자식(child) 요소를 추가할 수 있음
+```javascript
+$('ul').append('<li class="item">새로운 아이템</li>');
+// <ul> 안의 마지막 자식요소로 <li class="item">새로운 아이템</li>을 추가
+```
+
+따옴표(`"` 또는 `'`) 사용할 때, 같은 따옴표를 겹쳐서 사용할 경우 `\`를 앞에 추가해야 정상적으로 작동함
+```javascript
+$('#todo-list li:last-child').after('<li class='item'>새로운 아이템</li>');
+// '<li class='까지가 하나의 문자열로 인식되고, 
+// '>새로운 아이템</li>'가 다른 문자열로 인식됨
+
+$('#todo-list li:last-child').after('<li class=\'item\'>새로운 아이템</li>');
+// 안쪽에 있는 따옴표를 \'로 사용할 경우 정상적으로 작동함
+```
