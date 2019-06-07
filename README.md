@@ -41,7 +41,7 @@ Leaning JavaScript with internet!
 3. 코드의 흐름 - 반복문
 
 # Table of Contents
-<!-- TOC -->  
+
 - [1. 데이터를 다루는 법](#1-데이터를-다루는-법) 
     - [변수와 상수](#변수와-상수)  
     - [데이터의 형태 : 자료형](#데이터의-형태--자료형) 
@@ -66,10 +66,10 @@ Leaning JavaScript with internet!
     - [요소의 추가](#요소의-추가)
     - [요소의 이동과 삭제](#요소의-이동과-삭제)
 - [8. Event Object](#8-event-object)
-    - [Event Object 들여다보기](#event-object-들여다보기)        
-    - [Event Handler](#event-handler)        
-    - [다양한 event](#다양한-event)
-<!-- /TOC -->
+  - [Event Object 들여다보기](#event-object-들여다보기)        
+  - [Event Handler](#event-handler)        
+  - [다양한 event](#다양한-event)
+
 ## 1. 데이터를 다루는 법
 
 ### 변수와 상수
