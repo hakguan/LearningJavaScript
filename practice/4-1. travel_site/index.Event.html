@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Travel Website</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <img id="logo" src="images/logo.png" width="165" height="58">
+
+    <div id="menu">
+        <a id="home">Home</a>
+        <!--onclick="clickHome();" 부분을 삭제한 후, <script> 부분에 JS code를 작성해 html 본문을 깔끔하게 만듬-->
+        <a id="seoul">Seoul</a>
+        <a id="tokyo">Tokyo</a>
+        <a id="paris">Paris</a>
+    </div>
+
+    <!-- 마우스가 그림에 위치할 경우/벗어날 경우에 대한 함수 추가 -->
+    <img id="photo" src="images/home.png" width="90%">
+
+    <!-- jQuery를 사용할 수 있도록 하는 부분 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- jQuery를 사용해서 수정 -->
+    <script>
+        // html의 onclick을 대채할 수 있는 javascript code 작성
+        $('#menu a').on('click', selectMenu);
+
+        // 키보드 event handling
+        $(document).on('keydown', selectMenu);
+
+        // 사진 및 폰트 굵기를 바꿔주는 함수
+        function selectMenu(event) {
+            var targetId = '';
+            if (event.type === 'click') {
+                targetId = event.currentTarget.id
+            } else if (event.type === 'keydown') {
+                if (event.key === '1') {
+                    targetId = 'home';
+                } else if (event.key === '2') {
+                    targetId = 'seoul';
+                } else if (event.key === '3') {
+                    targetId = 'tokyo';
+                } else if (event.key === '4') {
+                    targetId = 'paris';
+                }
+            }
+
+            if (targetId) {
+                // 이미지 변경
+                $('#photo').attr('src', 'images/' + targetId + '.png');
+                // 폰트 굵기
+                $('#menu a').css('font-weight', 'normal');
+                $('#' + targetId).css('font-weight', 'bold');
+            }
+        }
+
+        // #photo의 html 코드 내의 javascript 코드를 대채하는 부분
+        $('#photo').on('mouseenter', mouseEnterPhoto);
+        $('#photo').on('mouseleave', mouseLeavePhoto);
+
+        // 마우스가 그림 위에 왔을 때 그림자가 생기고, 
+        // 마우스가 그림에서 벗어났을 때 그림자가 사라지도록 하는 함수
+        function mouseEnterPhoto() {
+            $('#photo').css('box-shadow', '5px 10px');
+        }
+
+        function mouseLeavePhoto() {
+            $('#photo').css('box-shadow', 'none');
+        }
+    </script>
+</body>
+
+</html>
