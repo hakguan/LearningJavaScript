@@ -41,7 +41,7 @@ Leaning JavaScript with internet!
 3. 코드의 흐름 - 반복문
 
 # Table of Contents
-  
+<!-- TOC -->  
 - [1. 데이터를 다루는 법](#1-데이터를-다루는-법) 
     - [변수와 상수](#변수와-상수)  
     - [데이터의 형태 : 자료형](#데이터의-형태--자료형) 
@@ -60,7 +60,16 @@ Leaning JavaScript with internet!
     - [String](#string)
     - [Array](#array)
     - [Date](#date)
-
+- [6. Audio](#6-audio)
+- [7. DOM tree](#7-dom-tree)
+    - [선택과 동작](#선택과-동작)
+    - [요소의 추가](#요소의-추가)
+    - [요소의 이동과 삭제](#요소의-이동과-삭제)
+- [8. Event Object](#8-event-object)
+    - [Event Object 들여다보기](#event-object-들여다보기)        
+    - [Event Handler](#event-handler)        
+    - [다양한 event](#다양한-event)
+<!-- /TOC -->
 ## 1. 데이터를 다루는 법
 
 ### 변수와 상수
@@ -1077,7 +1086,7 @@ $('#playBtn').on('click', playMusic);
 $('#stopBtn').on('click', stopMusic);
 ```
 
-## 6. DOM tree
+## 7. DOM tree
 DOM (Document Object Model) : 문서 객체 모델  
 코드를 객체(Object)로 구성된 DOM을 구성하고, 이를 시각화해서 브라우저에 보여줌
 
@@ -1318,3 +1327,83 @@ $(`ul`).prepend($('.important'));
 // #first 요소가 삭제됨
 $('#first').remove();
 ```
+
+## 8. Event Object
+
+### Event Object 들여다보기
+
+Event Object는 event가 발생할 경우 생성되는 객체로 `.on('click', function)`, `.on('keydown', function)` 처럼 활용해 왔음  
+다음과 같은 코드를 사용해서 event object를 console에서 확인할 수 있음
+
+```Javascript
+$('#home').on('click', clickHome);
+function clickHome(event) {
+  console.log(event);
+}
+```
+
+```Javascript
+$(document).on('keydown', processKeyEvent);
+function processKeyEvent(e) {
+  console.log(e);
+}
+```
+
+### Event Handler
+
+`$(selector).on('event', event handler function)`와 같은 코드를 통해 Event를 등록하고, Event Handler 함수를 호출할 수 있음  
+Event Object를 함수 내에서 사용하고자 할 경우, 함수 선언 부분에 파라미터를 넣는 것 만으로 Event Object의 전달이 가능해짐
+
+```Javascript
+$(document).on('keydown', keyboardInput);
+
+function keyboardInput(e) {
+  console.log(e.key);
+  // console에 keydown event object 중 key property의 value가 출력됨
+}
+```
+
+### 다양한 event  
+
+1. 마우스 이벤트  
+   
+   |    EVENT    | DESCRIPTION              |
+   | :---------: | :----------------------- |
+   | `mouseover` | 마우스 포인터가 영역 위로 올라올 경우 발생 |
+   | `mouseout`  | 마우스 포인터가 영역에서 벗어날 경우 발생  |
+   | `mousedown` | 마우스 버튼을 누를 경우 발생         |
+   |  `mouseup`  | 마우스 버튼을 눌렀다 놓을 경우 발생     |
+   | `mousemove` | 마우스를 움직일 경우 발생           |
+   |  `dbclick`  | 더블클릭시 발생                 |
+   | `dragdrop`  | 마우스를 드래그할 때 발생           |
+
+2. 키보드 이벤트
+   
+   |   EVENT    | DESCRIPTION                                |
+   | :--------: | :----------------------------------------- |
+   | `keydown`  | 키보드의 버튼이 내려가는 순간 발생하는 이벤트                  |
+   | `keypress` | 키보드의 버튼이 내려가는 순간 발생하는 이벤트(출력이 가능한 키에서만 동작) |
+   |  `keyup`   | 눌러진 키보드의 버튼이 다시 올라오면서 발생하는 이벤트             |
+
+3. 포커스 이벤트
+   
+   |  EVENT  | DESCRIPTION          |
+   | :-----: | :------------------- |
+   | `focus` | 포커스가 위치할 경우 발생       |
+   | `blur`  | 포커스를 다른 곳으로 옮길 경우 발생 |
+
+4. 입력 이벤트
+   
+   |  EVENT   | DESCRIPTION         |
+   | :------: | :------------------ |
+   | `change` | 선택 값을 바꿀 경우 발생      |
+   | `input`  | 사용자가 입력을 하는 경우 발생   |
+   | `select` | 입력 양식의 하나가 선택될 때 발생 |
+   | `submit` | 폼을 전송하는 경우 발생       |
+
+5. 윈도우 창 이벤트
+   
+   |  EVENT   | DESCRIPTION           |
+   | :------: | :-------------------- |
+   |  `move`  | 윈도우나 프레임을 움직일 때 발생    |
+   | `resize` | 윈도우나 프레임 사이즈를 바꿀 때 발생 |
