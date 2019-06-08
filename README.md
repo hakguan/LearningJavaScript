@@ -69,6 +69,7 @@ Leaning JavaScript with internet!
   - [Event Object 들여다보기](#event-object-들여다보기)        
   - [Event Handler](#event-handler)        
   - [다양한 event](#다양한-event)
+  - [\$(document).ready와 익명함 수](#$(document).ready와-익명함수)
 
 ## 1. 데이터를 다루는 법
 
@@ -1407,3 +1408,33 @@ function keyboardInput(e) {
    | :------: | :-------------------- |
    |  `move`  | 윈도우나 프레임을 움직일 때 발생    |
    | `resize` | 윈도우나 프레임 사이즈를 바꿀 때 발생 |
+
+### $(document).ready와 익명함수
+`<script>` 안의 요소들을 `<body>` 맨 뒤에 넣는 이유는 코드가 실행될 때 위에서부터 시행되므로, `<body>` 안의 DOM 객체들이 모두 준비가 된 후, Javascript에서 각 요소를 불러올 수 있게 하기 위함임  
+  
+만약, `<script>`를 `<head>`에 넣을 경우 `<body>`의 모든 요소가 준비된 후 코드를 실행하도록 하기 위해 다음과 같은 코드를 사용할 수 있음
+```html
+<head>
+  <script>
+    $(document).ready(whenReady);
+
+    function whenReady() {
+      // 실행하고자하는 javascript 코드를 안애 넣어줌
+    }
+  </script>
+</head>
+```
+  
+하지만, 한번 사용하기 위해 `whenReady`라는 함수명을 주면서까지 따로 정의하는 것은 비효율적이므로 **익명함수**를 사용해서 함수를 바로 정의해줄 수 있음
+```html
+<head>
+  <script>
+    $(document).ready(function() {
+        // 실행하고자하는 javascript 코드를 안애 넣어줌
+        // 실행하고자 하는 코드 내에 일회성 함수가 또 있다면
+        //이 코드 안에서 다시 익명함수를 사용할 수 있음
+      }
+    );
+  </script>
+</head>
+```
