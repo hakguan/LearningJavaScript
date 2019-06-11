@@ -501,106 +501,124 @@ console.log(person.name); // Dongwook
     ```
 
 ## 3. 코드의 흐름 - 반복문
-### 반복문
-* for 반복문
+
+### for 반복문
+
+```Javascript
+var brands = ['Apple', 'Coca-Cola', 'Starbucks', 'Amazon', 'Disney', 'BMW'];
+/*
+for (반복문에 사용할 변수 선언; 반복 조건; 반복문이 끝나고 실행될 코드) {
+  반복시키고 싶은 코드;
+}
+*/
+for (var i = 0; i < 6; i = i + 1) {
+  console.log(brands[i]);
+}
+```
+
+**for of 반복문**
+
+```Javascript
+var brands = ['NIKE', 'ADIDAS', 'REEBOK'];
+
+// 배열의 모든 값을 출력하기 위한 반복문
+for (var i = 0; i < brands.length; i ++) {
+  console.log(brands[i]);
+}
+
+// for of 반복문은 배열의 0번 index를 첫 번째 값으로 가짐
+for (value of brands) {
+  console.log(value);
+}
+```
+
+* 일반 for 반복문과 for of 반복문이 갖는 장점
+  + 조건 작성 부분 간편
+  + 불필요한 변수 지정 불필요
+
+**for in 반복문**
+
+- for of 반복문은 ES6(2015년)에 생긴 기능으로 그 전에는 for in 반복문을 사용하였음
+- 만약 테스트 했을 때 for of 반복문이 작동하지 않는다면 해당 브라우저가 ES6을 지원하는지 여부를 알아봐야 함
+- for in 반복문은 for of 반복문과 달리 value가 아닌 index로 접근함
+
+```Javascript
+var arr = ['apple', 'banana', 'coconut'];
+
+//for of 반복문
+for (var v of arr) {
+  console.log(v); // apple 부터 값 출력
+}
+
+//for in 반복문
+for (var k in arr) {
+  console.log(k); // 0, 1, 2 순서로 값 출력
+}
+// 따라서 value를 출력하고 싶을 경우 console.log(arr[k])를 사용해야 함
+```
+
+### while 반복문
+
+```Javascript
+var brands = ['Apple', 'Coca-Cola', 'Starbucks', 'Amazon', 'Disney', 'BMW'];
+// 1. 변수지정
+var i = 0;
+// 2. while문 작성
+while (i < 6) { //조건이 true일 경우 반복
+  console.log(brands[i]);
+  i ++;
+}
+// while문의 조건이 false가 될 경우 반복 종료
+```
+
+* break문 : while문의 조건부분과 상관 없이 반복문에서 나오게 하고 싶은 경우
   ```Javascript
-  var brands = ['Apple', 'Coca-Cola', 'Starbucks', 'Amazon', 'Disney', 'BMW'];
-  /*
-  for (반복문에 사용할 변수 선언; 반복 조건; 반복문이 끝나고 실행될 코드) {
-    반복시키고 싶은 코드;
+  var i = 100;
+
+  while (true) {
+    // i가 23의 배수일 경우 반복문 종료
+    if (i % 23 == 0) {
+      break;
+    }
+    i = i + 1;
   }
-  */
-  for (var i = 0; i < 6; i = i + 1) {
-    console.log(brands[i]);
-  }
+
+  console.log(i);
   ```
-
-  + for of 반복문
-    ```Javascript
-    var brands = ['NIKE', 'ADIDAS', 'REEBOK'];
-    
-    // 배열의 모든 값을 출력하기 위한 반복문
-    for (var i = 0; i < brands.length; i ++) {
-      console.log(brands[i]);
-    }
-
-    // for of 반복문은 배열의 0번 index를 첫 번째 값으로 가짐
-    for (value of brands) {
-      console.log(value);
-    }
-    ```
-
-    - 일반 for 반복문과 for of 반복문이 갖는 장점
-      - 조건 작성 부분 간편
-      - 불필요한 변수 지정 불필요
-
-  + for in 반복문
-    - for of 반복문은 ES6(2015년)에 생긴 기능으로 그 전에는 for in 반복문을 사용하였음
-    - 만약 테스트 했을 때 for of 반복문이 작동하지 않는다면 해당 브라우저가 ES6을 지원하는지 여부를 알아봐야 함
-    - for in 반복문은 for of 반복문과 달리 value가 아닌 index로 접근함
-    ```Javascript
-    var arr = ['apple', 'banana', 'coconut'];
-
-    //for of 반복문
-    for (var v of arr) {
-      console.log(v); // apple 부터 값 출력
-    }
-
-    //for in 반복문
-    for (var k in arr) {
-      console.log(k); // 0, 1, 2 순서로 값 출력
-    }
-    // 따라서 value를 출력하고 싶을 경우 console.log(arr[k])를 사용해야 함
-    ```
-
-* while 반복문
+* continue문 : 현재 진행되고 있는 수행부분을 중단시키고 다시 조건부분을 확인하도록 하고 싶은 경우
   ```Javascript
-  var brands = ['Apple', 'Coca-Cola', 'Starbucks', 'Amazon', 'Disney', 'BMW'];
-  // 1. 변수지정
   var i = 0;
-  // 2. while문 작성
-  while (i < 6) { //조건이 true일 경우 반복
-    console.log(brands[i]);
-    i ++;
-  }
-  // while문의 조건이 false가 될 경우 반복 종료
-  ```
 
-  + while 반복문에서 break와 continue
-    - break문 : while문의 조건부분과 상관 없이 반복문에서 나오게 하고 싶은 경우
-    ```Javascript
-    var i = 100;
-    
-    while (true) {
-      // i가 23의 배수일 경우 반복문 종료
-      if (i % 23 == 0) {
-        break;
-      }
-      i = i + 1;
+  while (i < 15) {
+    i ++;
+
+    // i가 홀수일 경우 console.log(i)로 넘어가지 않고 다시 조건부분으로 넘어감
+    if (i % 2 == 1) {
+      continue;
     }
 
     console.log(i);
-    ```
-    - continue문 : 현재 진행되고 있는 수행부분을 중단시키고 다시 조건부분을 확인하도록 하고 싶은 경우
-    ```Javascript
-    var i = 0;
-
-    while (i < 15) {
-      i ++;
-
-      // i가 홀수일 경우 console.log(i)로 넘어가지 않고 다시 조건부분으로 넘어감
-      if (i % 2 == 1) {
-        continue;
-      }
-
-      console.log(i);
-    }
-    ```
+  }
+  ```
 
 * for문 vs while문
   + for문과 while문의 기능적 차이는 없으나, 경우에 따라 더 적합하고 보기 좋은가에 대한 판단을 통해 어떤 문법을 사용할지 결정함
   + 일반적으로 반복 횟수가 예측 가능할 경우 for문을 사용하는 것이 더 효과적이고, 
   + 반대로 반복 횟수를 예측할 수 없을 경우 while문을 쓰는 것이 효과적인 경우가 많음
+
+### each 반복문
+
+반복문이라기 보다는 메소드로 사용되는 것(?)
+```Javascript
+$('.card').each(function() {
+  console.log($(this).text());
+})
+// card 클래스를 가진 항목이 차례대로 불려오고 함수가 실행됨
+// $(this)를 출력할 경우 각 항목에 대한 객체가 리턴되며, 
+// .text() 할 경우 각 객체의 text를 불러올 수 있음
+```
+
+
 
 ## 4. HTML, CSS와의 콜라보레이션
 [learning_webdev/practice/travel_site/](https://github.com/hakguan/learning_webdev/tree/master/practice/travel_site)에서는 각 국가의 페이지로 이동할 때 국가별로 html 파일을 만들어서 지정했지만, [Javascript를 사용](https://github.com/hakguan/LearningJavaScript/tree/master/practice/travel_site)하면 하나의 html 파일에서 클릭했을 때의 명령을 각각 지정해줄 수 있고 html의 body 부분을 최대한 보기 좋게 하기 위해 함수를 정의해 활용하는 것이 좋음
@@ -1437,4 +1455,49 @@ function keyboardInput(e) {
     );
   </script>
 </head>
+```
+
+## 9. 요소 숨기기, 보여주기
+
+### hide / show / fadeOut / fade In
+
+```javascript
+$('#photo').hide(); // 요소 숨기기
+$('#photo').show(); // 요소 보여주기
+
+$('#photo').fadeOut(1000); // 요소를 1000ms의 시간동안 Fade Out
+$('#photo').fadeIn(1000); // 요소를 1000ms의 시간동안 Fade In
+```
+
+### Scroll에 적용
+
+**새로운 개념**  
+
+`$(window).scrollTop();`은 현재 scroll-bar의 위치를 반환해줌  
+`$(iwndow).on('scroll', function)`을 통해 scroll event를 사용할 수 있음
+  
+  
+**스크롤 할 떄마다 요소가 점점 투명해지도록 설정**
+
+```Javascript
+$(window).on('scroll', function() {
+  $('.top').css('opacity', 1 - $(window).scrollTop() / $('.top').height());  
+});
+//$('.top').height()는 .top의 높이를 반환해줌
+```
+
+**Go to Top 버튼**
+
+```Javascript
+$('.go-to-top').on('click', function() {
+  $(window).scrollTop(0);
+})
+```
+
+```Javascript
+// 애니매이션 넣기
+$('.go-to-top').on('click', function() {
+  $('html, body').animate({scrollTop: 0}, 500);
+  // animate({scrollTop(이동하려는 위치)}, 걸리는 시간);
+})
 ```
