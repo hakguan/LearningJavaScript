@@ -1,11 +1,10 @@
-$('#send').on('click', sendMessege);
+$('#send').on('click', sendMessage);
 
-function sendMessege() {
+function sendMessage() {
     var text = $('textarea').val();
     text = text.replace(/(?:\r\n|\r|\n)/g, '<br />')
     if (text) {
-        $('.chatbox').append('<div class="my-bubble bubble"></div>');
-        $('.my-bubble:last-child').html(text);
+        $('.chatbox').append('<div class="my-bubble bubble">' + text + '</div>');
         $('textarea').val('')
     }
 }
