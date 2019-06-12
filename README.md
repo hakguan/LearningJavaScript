@@ -1501,3 +1501,63 @@ $('.go-to-top').on('click', function() {
   // animate({scrollTop(이동하려는 위치)}, 걸리는 시간);
 })
 ```
+
+## 10. jQuery Animation
+
+### CSS요소 적용
+
+**CSS 적용하기**
+
+```javascript
+// 오른쪽으로 이동 : 왼쪽에 250px 만큼의 공간을 줌
+$('div').animate({left: '250px'});
+```
+
+**여러 CSS 적용하기**
+```javascript
+// 여러 CSS 요소 적용
+// 오른쪽으로 250px만큼 이동하면서 동시에 opacity 0.5가 적용됨
+$('div').animate({left: '250px'}, {opacity: '0.5'});
+
+// 위의 코드를 두개로 나눠서 작성할 경우 순서대로 적용됨
+$('div').animate({left: '250px'});
+$('div').animate({opacity: '0.5'});
+```
+
+**CSS 반복해서 적용하기**
+
+`$('div').animate({left: '+=250px'});`는 CSS를 반복적용할 수 있게 해줌
+
+```javascript
+// button이 click될 때마다 오른쪽으로 250px씩 이동함
+$(document).ready(function() {
+  $('button').on('click', function() {
+    $('div').animate({left: '+=250px'});
+  })
+})
+```
+
+**CSS 적용 속도 조절하기**
+
+```javascript
+// 지정된 animation이 1000ms 동안 이루어짐
+// 숫자 뿐만 아니라 fast, slow로도 적용할 수 있음
+$('div').animate({left: '250px'}, 1000);
+```
+
+### Animation Effect 적용하기
+
+```javascript
+// 오른족으로 250px만큼 1000ms 동안 이동하되, easeOutElastic 효과가 적용됨
+$('div').animate({left: '250px'}, 1000, 'easeOutElastic')
+```
+
+이런 animation effect를 **'Easing'**이라고 하며, `linear`, `swing`, `easeInBounce`, `easeOutBounce`, `easeInBounce` 등이 존재함([참고링크](https://easings.net/))
+
+**'Easing'**을 사용하기 위해서는 jQueryUI 코드를 추가해줘야 함([jQuery UI CDN 링크](https://code.jquery.com/ui/))
+```javascript
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
+```
