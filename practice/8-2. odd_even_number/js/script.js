@@ -22,7 +22,7 @@
 $('#even-btn').on('click', function () {
     $('.card').removeClass('selected');
     $('.card').each(function () {
-        if ($(this).text() % 2 == 0) {
+        if (Number($(this).text()) % 2 === 0) {
             $(this).addClass('selected');
         }
     })
@@ -31,7 +31,7 @@ $('#even-btn').on('click', function () {
 $('#odd-btn').on('click', function () {
     $('.card').removeClass('selected');
     $('.card').each(function () {
-        if ($(this).text() % 2 == 1) {
+        if (Number($(this).text()) % 2 === 1) {
             $(this).addClass('selected');
         }
     })
