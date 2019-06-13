@@ -70,6 +70,12 @@ Leaning JavaScript with internet!
   - [Event Handler](#event-handler)        
   - [다양한 event](#다양한-event)
   - [\$(document).ready와 익명함 수](#$(document).ready와-익명함수)
+- [9. 요소 숨기기, 보여주기](#9-요소-숨기기,-보여주기)
+  - [hide / show / fadeOut / fadeIn](#hide--show--fadeout--fadein)
+  - [Scroll에 적용](#scroll에-적용)
+- [10. jQuery Animation](#10-jquery-animation)
+  - [CSS요소 적용](#css요소-적용)
+  - [Animation Effect 적용하기](#animation-effect-적용하기)
 
 ## 1. 데이터를 다루는 법
 
@@ -1459,7 +1465,7 @@ function keyboardInput(e) {
 
 ## 9. 요소 숨기기, 보여주기
 
-### hide / show / fadeOut / fade In
+### hide / show / fadeOut / fadeIn
 
 ```javascript
 $('#photo').hide(); // 요소 숨기기
