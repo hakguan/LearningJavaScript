@@ -42,14 +42,17 @@
     <script>
         $('#popup-trigger').on('click', function () {
             $('#popup').fadeIn(1000);
-            $('#close-btn').on('click', function () {
+        })
+
+        $('#close-btn').on('click', function () {
+            $('#popup').fadeOut(1000);
+        });
+
+        $(document).on('keydown', function () {
+            if (event.key === 'Escape') {
+                // 또는 event.which를 사용하면 고유 번호를 확인할 수 있음
                 $('#popup').fadeOut(1000);
-            });
-            $(document).on('keydown', function () {
-                if (event.key === 'Escape') {
-                    $('#popup').fadeOut(1000);
-                }
-            });
+            }
         });
     </script>
 </body>
