@@ -1517,7 +1517,7 @@ $('div').animate({left: '250px'});
 ```javascript
 // 여러 CSS 요소 적용
 // 오른쪽으로 250px만큼 이동하면서 동시에 opacity 0.5가 적용됨
-$('div').animate({left: '250px'}, {opacity: '0.5'});
+$('div').animate({left: '250px', opacity: '0.5'});
 
 // 위의 코드를 두개로 나눠서 작성할 경우 순서대로 적용됨
 $('div').animate({left: '250px'});
