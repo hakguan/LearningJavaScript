@@ -1552,9 +1552,9 @@ $('div').animate({left: '250px'}, 1000);
 $('div').animate({left: '250px'}, 1000, 'easeOutElastic')
 ```
 
-이런 animation effect를 **'Easing'**이라고 하며, `linear`, `swing`, `easeInBounce`, `easeOutBounce`, `easeInBounce` 등이 존재함([참고링크](https://easings.net/))
+이런 animation effect를 **Easing**이라고 하며, `linear`, `swing`, `easeInBounce`, `easeOutBounce`, `easeInBounce` 등이 존재함([참고링크](https://easings.net/))
 
-**'Easing'**을 사용하기 위해서는 jQueryUI 코드를 추가해줘야 함([jQuery UI CDN 링크](https://code.jquery.com/ui/))
+**Easing**을 사용하기 위해서는 jQueryUI 코드를 추가해줘야 함([jQuery UI CDN 링크](https://code.jquery.com/ui/))
 ```javascript
 <script
   src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
