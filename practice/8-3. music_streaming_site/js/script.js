@@ -17,6 +17,21 @@ function scrollHandler() {
         }
     })
 
+    // FIXME: each
+    // function scrollHandler() {
+    //     var windowBottom = $(window).scrollTop() + $(window).height();
+
+    //     $('.playlist').each(function() {
+    //         var playlist = $(this);
+
+    //         var playlistHalf = playlist.position().top + playlist.outerHeight() / 2;
+
+    //         if (playlistHalf < windowBottom) {
+    //             playlist.animate({'opacity' : '1'}, 1500);
+    //         }
+    //     })
+    // }
+
     //for 반복문 사용
 
     //     for (var i = 1; i < 8; i++) {
@@ -29,6 +44,21 @@ function scrollHandler() {
     //             });
     //         }
     //     }
+
+    // FIXME: for 반복문
+    // function scrollHandler() {
+    //     var windowBottom = $(window).scrollTop() + $(window).height();
+
+    //     var playlists = $('.playlist');
+    //     for (var i = 0; i < playlists.length; i++) {
+    //         var playlist = $(playlists[i]);
+    //         var playlistHalf = playlist.position().top + playlist.outerHeight() / 2;
+
+    //         if (playlistHalf < windowBottom) {
+    //             playlist.animate({'opacity' : '1'}, 1500);
+    //         }
+    //     }
+    // }
 
     // go to top button
     if (bottomLine === $(document).height()) {
