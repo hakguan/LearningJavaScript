@@ -5,13 +5,29 @@ $('.menu-right button').on('click', sectionScroll)
 
 // Section Scroll
 function sectionScroll() {
-    var sectionClass = '.' + event.target.innerText.toLowerCase();
+    var sectionClass = $('.' + event.target.innerText.toLowerCase());
     // 클릭한 버튼에 해당되는 section class명
 
     $('html, body').animate({
-        scrollTop: $(sectionClass).position().top
+        scrollTop: sectionClass.position().top
     }, 1000);
 }
+
+// FIXME: answer
+// $('.menu-right button').on('click', function () {
+//     var id = $(this).attr('id');
+//     if (id == "about-btn") {
+//         $('html, body').animate({
+//             scrollTop: $('.about').position().top
+//         }, 1000);
+//     } else if (id == "contact-btn") {
+//         $('html, body').animate({
+//             scrollTop: $('.contact').position().top
+//         }, 1000);
+//     }
+// })
+
+
 
 // Scroll Handler 함수 
 //(font color 변경, skill animation, section contents)
